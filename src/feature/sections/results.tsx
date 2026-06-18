@@ -51,7 +51,7 @@ export function Results() {
 								A Real Client Growth Story Backed by Results
 							</Badge>
 							<h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
-								Data That Speaks Volumes.
+								The Results
 							</h2>
 						</div>
 					</div>

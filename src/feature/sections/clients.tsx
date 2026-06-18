@@ -62,7 +62,7 @@ export function Clients() {
 											alt={logo.name}
 											width={160}
 											height={80}
-											className="w-auto h-8 sm:h-10 object-contain opacity-50 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300 scale-95 group-hover:scale-100"
+											className="w-auto h-8 sm:h-10 object-contain transition-all duration-300 scale-95 group-hover:scale-100"
 										/>
 									</div>
 								</CarouselItem>

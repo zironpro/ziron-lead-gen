@@ -5,6 +5,7 @@ import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { WhatsAppButton } from "@/components/layout/whatsapp";
 import { NextSectionButton } from "@/components/layout/next";
+import { FloatingButtonsMobile } from "@/components/layout/floating-buttons-mobile";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -33,6 +34,7 @@ export default function RootLayout({
 				<Footer />
 				<WhatsAppButton />
 				<NextSectionButton />
+				<FloatingButtonsMobile />
 			</body>
 		</html>
 	);

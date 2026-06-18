@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
+import Link from "next/link";
 import {
 	Accordion,
 	AccordionContent,
@@ -66,7 +67,15 @@ export function WeAchieved() {
 								predictable, high-converting revenue engine.
 							</p>
 
-							<Button className="bg-amber-500 hover:bg-amber-600 text-white rounded-lg px-8 h-12 font-bold shadow-lg shadow-amber-500/20 group w-full sm:w-auto transition-all">
+							<Button 
+								nativeButton={false}
+								render={<Link href="#contact" />}
+								onClick={(e) => {
+									e.preventDefault();
+									document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+								}}
+								className="bg-amber-500 hover:bg-amber-600 text-white rounded-lg px-8 h-12 font-bold shadow-lg shadow-amber-500/20 group w-full sm:w-auto transition-all"
+							>
 								<CalendarDays className="w-4 h-4 mr-2" />
 								Book a Strategy Call
 								<ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />

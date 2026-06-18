@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { ArrowRight, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion } from "motion/react";
-
+import Link from "next/link";
 function Counter({
 	target,
 	duration = 2000,
@@ -40,15 +40,7 @@ function Counter({
 
 export function Hero() {
 	return (
-		<section
-			className="relative py-24 md:py-32 lg:py-40 overflow-hidden bg-cover bg-center bg-no-repeat"
-			style={{
-				backgroundImage: `url('/image/leads%20page%20hero%20image%20bg.jpg.jpeg')`,
-			}}
-		>
-			{/* Subtle overlay for text readability */}
-			<div className="absolute inset-0 bg-slate-950/20 z-0 pointer-events-none"></div>
-
+		<section className="relative py-24 md:py-32 lg:py-40 overflow-hidden bg-slate-950">
 			<div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[1200px] relative z-10">
 				<div className="flex flex-col items-start justify-center text-left max-w-3xl">
 					{/* Text Content */}
@@ -79,7 +71,15 @@ export function Hero() {
 
 						{/* Call to Action Buttons */}
 						<div className="flex flex-col sm:flex-row items-center justify-start gap-4 pt-4 w-full">
-							<Button className="bg-amber-500 hover:bg-amber-600 text-white rounded-lg px-8 h-14 font-bold text-lg shadow-lg shadow-amber-500/20 w-full sm:w-auto transition-all group">
+							<Button 
+								nativeButton={false}
+								render={<Link href="#contact" />}
+								onClick={(e) => {
+									e.preventDefault();
+									document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+								}}
+								className="bg-amber-500 hover:bg-amber-600 text-white rounded-lg px-8 h-14 font-bold text-lg shadow-lg shadow-amber-500/20 w-full sm:w-auto transition-all group"
+							>
 								Get Your Free Audit
 								<ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
 							</Button>

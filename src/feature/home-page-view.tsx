@@ -7,18 +7,20 @@ import { Transformation } from "./sections/transformation";
 import { Package } from "./sections/package";
 import { WeAchieved } from "./sections/we-achieved";
 import { CTC } from "./sections/cta";
+import { FormSection } from "./sections/form";
 
 export function HomePageView() {
 	return (
 		<main className="min-h-screen selection:bg-amber-100 selection:text-amber-900 font-sans">
 			<Hero />
 			<Clients />
-			<Challenge />
-			<Strategy />
+			{/* <Challenge /> */}
+			{/* <Strategy /> */}
 			<Results />
 			<Package />
 			<Transformation />
-			<WeAchieved />
+			{/* <WeAchieved /> */}
+			<FormSection />
 			<CTC />
 		</main>
 	);

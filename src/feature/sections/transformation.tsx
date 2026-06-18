@@ -2,6 +2,7 @@
 
 import { motion } from "motion/react";
 import { Badge } from "@/components/ui/badge";
+import Image from "next/image";
 
 export function Transformation() {
 	return (
@@ -44,32 +45,15 @@ export function Transformation() {
 							Low engagement <br /> No consistent leads
 						</p>
 
-						{/* Fake IG Grid (Before) */}
-						<div className="bg-white border border-slate-200 rounded-lg overflow-hidden w-full max-w-[260px] mx-auto shadow-sm mb-8 opacity-70 grayscale">
-							<div className="flex items-center justify-between p-3 border-b border-slate-100">
-								<div className="flex items-center gap-2">
-									<div className="w-6 h-6 rounded-full bg-slate-200"></div>
-									<div className="w-16 h-2 bg-slate-200 rounded"></div>
-								</div>
-								<div className="w-4 h-4 text-slate-300">
-									<svg
-										viewBox="0 0 24 24"
-										fill="none"
-										stroke="currentColor"
-										strokeWidth="2"
-									>
-										<path d="M3 12h18M3 6h18M3 18h18" />
-									</svg>
-								</div>
-							</div>
-							<div className="grid grid-cols-3 gap-0.5 bg-slate-100">
-								{[...Array(9)].map((_, i) => (
-									<div
-										key={i}
-										className="aspect-square bg-slate-200 relative"
-									></div>
-								))}
-							</div>
+						{/* Before Image */}
+						<div className="rounded-lg overflow-hidden w-full max-w-[260px] mx-auto shadow-sm mb-8 opacity-80 border border-slate-200 grayscale-[0.3]">
+							<Image
+								src="/image/before.png"
+								alt="Before transformation"
+								width={260}
+								height={400}
+								className="w-full h-auto object-cover"
+							/>
 						</div>
 
 						<div className="text-slate-400 text-xs font-bold tracking-wider mb-2">
@@ -133,37 +117,15 @@ export function Transformation() {
 							High engagement <br /> Consistent inquiries
 						</p>
 
-						{/* Fake IG Grid (After) */}
-						<div className="bg-white border border-slate-200 rounded-lg overflow-hidden w-full max-w-[260px] mx-auto shadow-2xl shadow-amber-500/10 mb-8 transform hover:-translate-y-2 transition-transform duration-500">
-							<div className="flex items-center justify-between p-3 border-b border-slate-100">
-								<div className="flex items-center gap-2">
-									<div className="w-6 h-6 rounded-full bg-gradient-to-tr from-amber-400 via-indigo-500 to-violet-500 p-[2px]">
-										<div className="w-full h-full bg-white rounded-lg border-[1.5px] border-white"></div>
-									</div>
-									<div className="w-16 h-2 bg-slate-900 rounded"></div>
-								</div>
-								<div className="w-4 h-4 text-slate-900">
-									<svg
-										viewBox="0 0 24 24"
-										fill="none"
-										stroke="currentColor"
-										strokeWidth="2"
-									>
-										<path d="M3 12h18M3 6h18M3 18h18" />
-									</svg>
-								</div>
-							</div>
-							<div className="grid grid-cols-3 gap-0.5 bg-slate-100">
-								{[...Array(9)].map((_, i) => (
-									<div
-										key={i}
-										className="aspect-square bg-amber-900 relative overflow-hidden group"
-									>
-										<div className="absolute inset-0 bg-gradient-to-b from-transparent to-amber-900/80 opacity-90"></div>
-										<div className="absolute bottom-1 right-1 w-2.5 h-2.5 bg-white rounded-full shadow-[0_0_8px_rgba(255,255,255,0.8)]"></div>
-									</div>
-								))}
-							</div>
+						{/* After Image */}
+						<div className="rounded-lg overflow-hidden w-full max-w-[260px] mx-auto shadow-2xl shadow-amber-500/10 mb-8 border border-slate-200 transform hover:-translate-y-2 transition-transform duration-500">
+							<Image
+								src="/image/after.jpeg"
+								alt="After transformation"
+								width={260}
+								height={400}
+								className="w-full h-auto object-cover"
+							/>
 						</div>
 
 						<div className="text-slate-500 text-xs font-bold tracking-wider mb-2">
