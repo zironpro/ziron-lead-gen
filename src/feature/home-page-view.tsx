@@ -1,17 +1,14 @@
-import { Hero } from "./sections/hero";
 import { Clients } from "./sections/clients";
-import { Challenge } from "./sections/challenge";
-import { Strategy } from "./sections/strategy";
-import { Results } from "./sections/results";
-import { Transformation } from "./sections/transformation";
-import { Package } from "./sections/package";
-import { WeAchieved } from "./sections/we-achieved";
 import { CTC } from "./sections/cta";
 import { FormSection } from "./sections/form";
+import { Hero } from "./sections/hero";
+import { Package } from "./sections/package";
+import { Results } from "./sections/results";
+import { Transformation } from "./sections/transformation";
 
 export function HomePageView() {
 	return (
-		<main className="min-h-screen selection:bg-amber-100 selection:text-amber-900 font-sans">
+		<main className="min-h-screen font-sans selection:bg-amber-100 selection:text-amber-900">
 			<Hero />
 			<Clients />
 			{/* <Challenge /> */}

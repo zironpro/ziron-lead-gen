@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
-import { clash, inter, mono } from "@/assets/fonts";
-import { cn } from "@/lib/utils";
-import { Navbar } from "@/components/layout/navbar";
-import { Footer } from "@/components/layout/footer";
-import { WhatsAppButton } from "@/components/layout/whatsapp";
-import { NextSectionButton } from "@/components/layout/next";
+
 import { FloatingButtonsMobile } from "@/components/layout/floating-buttons-mobile";
+import { Footer } from "@/components/layout/footer";
+import { Navbar } from "@/components/layout/navbar";
+import { NextSectionButton } from "@/components/layout/next";
+import { WhatsAppButton } from "@/components/layout/whatsapp";
+
+import { clash, inter, mono } from "@/assets/fonts";
+
+import { cn } from "@/lib/utils";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -19,10 +22,10 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en" className="h-full">
+		<html className="h-full" lang="en">
 			<body
 				className={cn(
-					"min-h-full flex flex-col font-sans text-gray-900 bg-stone-100 m-0 p-0 overflow-x-hidden w-full",
+					"m-0 flex min-h-full w-full flex-col overflow-x-hidden bg-stone-100 p-0 font-sans text-gray-900",
 					"antialiased",
 					clash.variable,
 					inter.className,

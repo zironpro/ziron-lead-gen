@@ -1,14 +1,15 @@
 "use client";
 
-import { Users, FileX, CalendarMinus, Target } from "lucide-react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import { CalendarMinus, FileX, Target, Users } from "lucide-react";
 import { motion } from "motion/react";
+
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export function Challenge() {
 	const items = [
 		{
-			icon: <Users className="w-6 h-6 text-amber-600" />,
+			icon: <Users className="h-6 w-6 text-amber-600" />,
 			title: "Low Engagement",
 			description:
 				"Very low likes, comments & reach, making the brand feel stagnant.",
@@ -17,7 +18,7 @@ export function Challenge() {
 			iconBgClass: "bg-amber-100 group-hover:bg-amber-200",
 		},
 		{
-			icon: <FileX className="w-6 h-6 text-rose-600" />,
+			icon: <FileX className="h-6 w-6 text-rose-600" />,
 			title: "No Quality Leads",
 			description:
 				"Zero inquiries or property requests from their social presence.",
@@ -26,7 +27,7 @@ export function Challenge() {
 			iconBgClass: "bg-rose-100 group-hover:bg-rose-200",
 		},
 		{
-			icon: <CalendarMinus className="w-6 h-6 text-blue-600" />,
+			icon: <CalendarMinus className="h-6 w-6 text-blue-600" />,
 			title: "Inconsistent Posting",
 			description: "Random posting with no clear strategy or visual identity.",
 			bgClass: "bg-blue-50/50 hover:bg-blue-50",
@@ -34,7 +35,7 @@ export function Challenge() {
 			iconBgClass: "bg-blue-100 group-hover:bg-blue-200",
 		},
 		{
-			icon: <Target className="w-6 h-6 text-emerald-600" />,
+			icon: <Target className="h-6 w-6 text-emerald-600" />,
 			title: "Competitors Ahead",
 			description:
 				"Competitors were capturing all the high-value real estate leads.",
@@ -60,21 +61,21 @@ export function Challenge() {
 	};
 
 	return (
-		<section className="py-10 md:py-16 relative border-b border-slate-100 bg-neutral-50">
-			<div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[1200px]">
+		<section className="relative border-slate-100 border-b bg-neutral-50 py-10 md:py-16">
+			<div className="container mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8">
 				{/* Header */}
 				<motion.div
+					className="mx-auto mb-20 max-w-3xl text-center"
 					initial={{ opacity: 0, y: 20 }}
-					whileInView={{ opacity: 1, y: 0 }}
-					viewport={{ once: true }}
 					transition={{ duration: 0.6 }}
-					className="text-center max-w-3xl mx-auto mb-20"
+					viewport={{ once: true }}
+					whileInView={{ opacity: 1, y: 0 }}
 				>
-					<Badge className="bg-slate-900 text-white hover:bg-slate-800 border-none mb-6 px-4 py-1.5 text-xs font-semibold tracking-wider rounded-lg">
-						<span className="w-2 h-2 rounded-full bg-amber-500 mr-2"></span>
+					<Badge className="mb-6 rounded-lg border-none bg-slate-900 px-4 py-1.5 font-semibold text-white text-xs tracking-wider hover:bg-slate-800">
+						<span className="mr-2 h-2 w-2 rounded-full bg-amber-500" />
 						Before Working With Us
 					</Badge>
-					<h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
+					<h2 className="font-extrabold text-4xl text-slate-900 leading-tight tracking-tight md:text-5xl">
 						A Real Client Growth Story Backed by Results
 					</h2>
 					<p className="mt-6 text-lg text-slate-600">
@@ -85,29 +86,33 @@ export function Challenge() {
 
 				{/* 4 Column Grid */}
 				<motion.div
-					variants={containerVariants}
+					className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:gap-8 lg:grid-cols-4"
 					initial="hidden"
-					whileInView="visible"
+					variants={containerVariants}
 					viewport={{ once: true }}
-					className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8"
+					whileInView="visible"
 				>
-					{items.map((item, index) => (
-						<motion.div key={index} variants={itemVariants} className="h-full">
+					{items.map((item) => (
+						<motion.div
+							className="h-full"
+							key={item.title}
+							variants={itemVariants}
+						>
 							<Card
-								className={`h-full border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group cursor-default ${item.bgClass} ${item.borderClass}`}
+								className={`group h-full cursor-default border border-slate-200 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl ${item.bgClass} ${item.borderClass}`}
 							>
 								<CardHeader className="pb-4">
 									<div
-										className={`w-14 h-14 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-all duration-300 ${item.iconBgClass}`}
+										className={`mb-4 flex h-14 w-14 items-center justify-center rounded-lg transition-all duration-300 group-hover:scale-110 ${item.iconBgClass}`}
 									>
 										{item.icon}
 									</div>
-									<CardTitle className="text-xl font-bold text-slate-900">
+									<CardTitle className="font-bold text-slate-900 text-xl">
 										{item.title}
 									</CardTitle>
 								</CardHeader>
 								<CardContent>
-									<p className="text-slate-600 leading-relaxed text-sm">
+									<p className="text-slate-600 text-sm leading-relaxed">
 										{item.description}
 									</p>
 								</CardContent>

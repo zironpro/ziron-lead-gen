@@ -1,8 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
+
 import { ChevronDown, ChevronUp } from "lucide-react";
-import { motion, AnimatePresence } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 
 export function NextSectionButton() {
 	const [isBottom, setIsBottom] = useState(false);
@@ -43,19 +44,19 @@ export function NextSectionButton() {
 	return (
 		<AnimatePresence>
 			<motion.div
-				initial={{ opacity: 0, y: 20 }}
 				animate={{ opacity: 1, y: 0 }}
-				className="fixed bottom-8 left-1/2 -translate-x-1/2 z-40 hidden md:block"
+				className="fixed bottom-8 left-1/2 z-40 hidden -translate-x-1/2 md:block"
+				initial={{ opacity: 0, y: 20 }}
 			>
 				<button
-					onClick={handleClick}
-					className="bg-amber-500 p-3 rounded-lg shadow-lg shadow-amber-500/20 border-none hover:bg-amber-400 hover:-translate-y-1 transition-all duration-300 flex items-center justify-center animate-bounce group cursor-pointer"
 					aria-label={isBottom ? "Scroll to top" : "Scroll to next section"}
+					className="group flex animate-bounce cursor-pointer items-center justify-center rounded-lg border-none bg-amber-500 p-3 shadow-amber-500/20 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-amber-400"
+					onClick={handleClick}
 				>
 					{isBottom ? (
-						<ChevronUp className="w-6 h-6 text-slate-950 transition-colors" />
+						<ChevronUp className="h-6 w-6 text-slate-950 transition-colors" />
 					) : (
-						<ChevronDown className="w-6 h-6 text-slate-950 transition-colors" />
+						<ChevronDown className="h-6 w-6 text-slate-950 transition-colors" />
 					)}
 				</button>
 			</motion.div>

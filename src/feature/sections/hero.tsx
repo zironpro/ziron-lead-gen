@@ -1,10 +1,14 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { ArrowRight, TrendingUp } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { motion } from "motion/react";
+import { useEffect, useState } from "react";
+
 import Link from "next/link";
+
+import { ArrowRight, TrendingUp } from "lucide-react";
+import { motion } from "motion/react";
+
+import { Button } from "@/components/ui/button";
+
 function Counter({
 	target,
 	duration = 2000,
@@ -40,62 +44,66 @@ function Counter({
 
 export function Hero() {
 	return (
-		<section className="relative py-24 md:py-32 lg:py-40 overflow-hidden bg-gradient-to-br from-amber-50/80 via-white to-orange-50/80">
+		<section className="relative overflow-hidden bg-gradient-to-br from-amber-50/80 via-white to-orange-50/80 py-24 md:py-32 lg:py-40">
 			{/* Decorative glowing background orbs */}
-			<div className="absolute top-0 right-0 w-[600px] h-[600px] bg-amber-300/20 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3 pointer-events-none" />
-			<div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-orange-300/20 rounded-full blur-[120px] translate-y-1/3 -translate-x-1/3 pointer-events-none" />
-			
-			<div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[1200px] relative z-10">
-				<div className="flex flex-col items-start justify-center text-left max-w-3xl">
+			<div className="pointer-events-none absolute top-0 right-0 h-[600px] w-[600px] translate-x-1/3 -translate-y-1/2 rounded-full bg-amber-300/20 blur-[120px]" />
+			<div className="pointer-events-none absolute bottom-0 left-0 h-[600px] w-[600px] -translate-x-1/3 translate-y-1/3 rounded-full bg-orange-300/20 blur-[120px]" />
+
+			<div className="container relative z-10 mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8">
+				<div className="flex max-w-3xl flex-col items-start justify-center text-left">
 					{/* Text Content */}
 					<motion.div
-						initial={{ opacity: 0, y: 20 }}
 						animate={{ opacity: 1, y: 0 }}
+						className="flex w-full flex-col items-start space-y-8"
+						initial={{ opacity: 0, y: 20 }}
 						transition={{ duration: 0.6 }}
-						className="w-full flex flex-col items-start space-y-8"
 					>
-						<div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-lg bg-amber-100 border border-amber-200 text-amber-700 text-sm font-bold tracking-wide">
-							<TrendingUp className="w-4 h-4" />
+						<div className="inline-flex items-center gap-2 rounded-lg border border-amber-200 bg-amber-100 px-4 py-1.5 font-bold text-amber-700 text-sm tracking-wide">
+							<TrendingUp className="h-4 w-4" />
 							<span>Proven Digital Marketing in UAE</span>
 						</div>
 
-						<h1 className="text-5xl md:text-6xl lg:text-[72px] font-extrabold leading-[1.1] tracking-tight text-slate-900">
+						<h1 className="font-extrabold text-5xl text-slate-900 leading-[1.1] tracking-tight md:text-6xl lg:text-[72px]">
 							We Generated <br />
-							<span className="text-amber-500 inline-block drop-shadow-sm">
+							<span className="inline-block text-amber-500 drop-shadow-sm">
 								<Counter target={50} /> Qualified Leads
 							</span>{" "}
 							<br />
 							in 10 Days.
 						</h1>
 
-						<p className="text-slate-600 text-lg md:text-xl max-w-2xl leading-relaxed">
+						<p className="max-w-2xl text-lg text-slate-600 leading-relaxed md:text-xl">
 							Stop guessing. Start closing. Discover how our data-driven social
 							media and paid campaigns scale businesses.
 						</p>
 
 						{/* Call to Action Buttons */}
-						<div className="flex flex-col sm:flex-row items-center justify-start gap-4 pt-4 w-full">
-							<Button 
+						<div className="flex w-full flex-col items-center justify-start gap-4 pt-4 sm:flex-row">
+							<Button
+								className="group h-14 w-full rounded-lg bg-amber-500 px-8 font-bold text-lg text-white shadow-amber-500/20 shadow-lg transition-all hover:bg-amber-600 sm:w-auto"
 								nativeButton={false}
-								render={<Link href="#contact" />}
 								onClick={(e) => {
 									e.preventDefault();
-									document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+									document
+										.getElementById("contact")
+										?.scrollIntoView({ behavior: "smooth" });
 								}}
-								className="bg-amber-500 hover:bg-amber-600 text-white rounded-lg px-8 h-14 font-bold text-lg shadow-lg shadow-amber-500/20 w-full sm:w-auto transition-all group"
+								render={<Link href="#contact" />}
 							>
 								Get Your Free Audit
-								<ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+								<ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
 							</Button>
 							<Button
-								variant="outline"
+								className="h-14 w-full rounded-lg border-slate-200 bg-white px-8 font-bold text-lg text-slate-700 shadow-sm transition-all hover:bg-slate-50 hover:text-slate-900 sm:w-auto"
 								nativeButton={false}
-								render={<Link href="#pricing" />}
 								onClick={(e) => {
 									e.preventDefault();
-									document.getElementById("pricing")?.scrollIntoView({ behavior: "smooth" });
+									document
+										.getElementById("pricing")
+										?.scrollIntoView({ behavior: "smooth" });
 								}}
-								className="rounded-lg px-8 h-14 font-bold text-lg text-slate-700 border-slate-200 bg-white hover:bg-slate-50 hover:text-slate-900 w-full sm:w-auto transition-all shadow-sm"
+								render={<Link href="#pricing" />}
+								variant="outline"
 							>
 								View All Packages
 							</Button>

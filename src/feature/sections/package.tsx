@@ -1,9 +1,14 @@
 "use client";
 
 import { useState } from "react";
-import { Check, ArrowRight, ChevronDown, ChevronUp } from "lucide-react";
-import { Button } from "@/components/ui/button";
+
+import Link from "next/link";
+
+import { Check, ChevronDown, ChevronUp } from "lucide-react";
+import { motion } from "motion/react";
+
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import {
 	Carousel,
 	CarouselContent,
@@ -11,8 +16,6 @@ import {
 	CarouselNext,
 	CarouselPrevious,
 } from "@/components/ui/carousel";
-import { motion, AnimatePresence } from "motion/react";
-import Link from "next/link";
 
 const packages = [
 	{
@@ -154,163 +157,174 @@ export function Package() {
 	};
 
 	return (
-		<section id="pricing" className="pt-16 md:pt-24 pb-16 md:pb-24 relative border-b border-slate-100 bg-slate-50 overflow-hidden">
+		<section
+			className="relative overflow-hidden border-slate-100 border-b bg-slate-50 pt-16 pb-16 md:pt-24 md:pb-24"
+			id="pricing"
+		>
 			{/* Decorative Background */}
-			<div className="absolute top-0 left-0 w-full h-[500px] bg-white rounded-b-[100px] sm:rounded-b-[200px] z-0 shadow-[0_20px_60px_-20px_rgba(0,0,0,0.03)] pointer-events-none" />
+			<div className="pointer-events-none absolute top-0 left-0 z-0 h-[500px] w-full rounded-b-[100px] bg-white shadow-[0_20px_60px_-20px_rgba(0,0,0,0.03)] sm:rounded-b-[200px]" />
 
-			<div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
+			<div className="container relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 				{/* Header */}
 				<motion.div
+					className="mb-16 flex flex-col items-center justify-center text-center"
 					initial={{ opacity: 0, y: 20 }}
-					whileInView={{ opacity: 1, y: 0 }}
-					viewport={{ once: true }}
 					transition={{ duration: 0.6 }}
-					className="flex flex-col items-center justify-center mb-16 text-center"
+					viewport={{ once: true }}
+					whileInView={{ opacity: 1, y: 0 }}
 				>
-					<Badge className="bg-slate-900 text-white hover:bg-slate-800 border-none mb-6 px-4 py-1.5 text-xs font-semibold tracking-wider rounded-lg">
-						<span className="w-2 h-2 rounded-full bg-amber-500 mr-2"></span>
+					<Badge className="mb-6 rounded-lg border-none bg-slate-900 px-4 py-1.5 font-semibold text-white text-xs tracking-wider hover:bg-slate-800">
+						<span className="mr-2 h-2 w-2 rounded-full bg-amber-500" />
 						Pricing Plans
 					</Badge>
-					<h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight mb-6">
+					<h2 className="mb-6 font-extrabold text-4xl text-slate-900 leading-tight tracking-tight md:text-5xl lg:text-6xl">
 						Transparent Pricing.
 						<br /> <span className="text-amber-500">Unlimited Value.</span>
 					</h2>
-					<p className="text-slate-600 text-lg md:text-xl max-w-2xl">
+					<p className="max-w-2xl text-lg text-slate-600 md:text-xl">
 						Choose the perfect package to accelerate your growth. No hidden
 						fees, just pure ROI-focused marketing.
 					</p>
 				</motion.div>
 
 				{/* Pricing Carousel / Grid */}
-				<Carousel 
-					opts={{ align: "center", loop: false }} 
+				<Carousel
 					className="w-full max-w-full"
+					opts={{ align: "center", loop: false }}
 				>
-					<CarouselContent className="-ml-4 md:-ml-8 items-start pt-6 pb-6">
+					<CarouselContent className="-ml-4 items-start pt-6 pb-6 md:-ml-8">
 						{packages.map((pkg, index) => {
 							const isExpanded = expandedCards.includes(index);
-							const visibleCategories = isExpanded ? pkg.categories : pkg.categories.slice(0, 1);
+							const visibleCategories = isExpanded
+								? pkg.categories
+								: pkg.categories.slice(0, 1);
 
 							return (
-								<CarouselItem key={pkg.title} className="pl-4 md:pl-8 basis-[95%] sm:basis-[85%] md:basis-[60%] lg:basis-1/3 flex">
+								<CarouselItem
+									className="flex basis-[95%] pl-4 sm:basis-[85%] md:basis-[60%] md:pl-8 lg:basis-1/3"
+									key={pkg.title}
+								>
 									<motion.div
-										key={pkg.title}
-										initial={{ opacity: 0, y: 40 }}
-										whileInView={{ opacity: 1, y: 0 }}
-										viewport={{ once: true }}
-										transition={{ duration: 0.6, delay: index * 0.1 }}
-										className={`w-full relative bg-white rounded-3xl shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)] border ${
+										className={`relative w-full rounded-3xl border bg-white shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)] ${
 											pkg.popular
 												? "border-amber-400 shadow-amber-500/10 ring-4 ring-amber-500/10"
 												: "border-slate-200 hover:border-amber-200"
-										} transition-all duration-300 flex flex-col h-full`}
+										} flex h-full flex-col transition-all duration-300`}
+										initial={{ opacity: 0, y: 40 }}
+										key={pkg.title}
+										transition={{ duration: 0.6, delay: index * 0.1 }}
+										viewport={{ once: true }}
+										whileInView={{ opacity: 1, y: 0 }}
 									>
 										{/* Gradient background layers */}
-										<div className="absolute inset-0 pointer-events-none z-0 rounded-3xl overflow-hidden">
-											<div className="absolute -top-20 left-1/2 -translate-x-1/2 w-full h-[200px] bg-blue-100/60 blur-[60px]" />
-											<div className="absolute top-[160px] -left-20 -right-20 h-[140px] bg-gradient-to-r from-orange-200/60 via-amber-200/60 to-orange-200/60 blur-[45px]" />
+										<div className="pointer-events-none absolute inset-0 z-0 overflow-hidden rounded-3xl">
+											<div className="absolute -top-20 left-1/2 h-[200px] w-full -translate-x-1/2 bg-blue-100/60 blur-[60px]" />
+											<div className="absolute top-[160px] -right-20 -left-20 h-[140px] bg-gradient-to-r from-orange-200/60 via-amber-200/60 to-orange-200/60 blur-[45px]" />
 										</div>
-										
+
 										{pkg.popular && (
-									<div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
-										<div className="bg-amber-500 text-white text-xs font-bold uppercase tracking-wider py-1.5 px-4 rounded-full shadow-lg shadow-amber-500/30">
-											Most Popular
-										</div>
-									</div>
-								)}
-
-								<div className="relative z-10 flex flex-col h-full p-8 sm:p-10">
-									<div className="mb-8">
-									<h3 className="text-2xl font-bold text-slate-900 mb-3 tracking-tight">
-										{pkg.title}
-									</h3>
-									<p className="text-slate-500 text-sm font-medium h-10">
-										{pkg.subtitle}
-									</p>
-								</div>
-
-								<div className="flex flex-col mb-8 pb-8 border-b border-slate-100">
-									<div className="flex items-end gap-2">
-										<span className="text-4xl xl:text-5xl font-extrabold text-slate-900 tracking-tight leading-none">
-											{pkg.price}
-										</span>
-									</div>
-									<span className="text-slate-500 text-sm font-medium mt-2">
-										{pkg.priceSub}
-									</span>
-								</div>
-
-								<Button
-									nativeButton={false}
-									render={<Link href="#contact" />}
-									onClick={(e) => {
-										e.preventDefault();
-										document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
-									}}
-									className="w-full h-14 rounded-xl text-base font-bold mb-10 transition-all shrink-0 bg-black hover:bg-slate-900 text-white shadow-lg shadow-black/10"
-								>
-									{pkg.popular ? "Get Started Now" : "Choose Plan"}
-								</Button>
-
-								<div className="flex flex-col gap-8 flex-1">
-									{visibleCategories.map((category) => (
-										<motion.div 
-											key={category.name} 
-											className="flex flex-col gap-4"
-											initial={{ opacity: 0, height: 0 }}
-											animate={{ opacity: 1, height: "auto" }}
-											transition={{ duration: 0.3 }}
-										>
-											<h4 className="font-bold text-slate-900 text-[15px] uppercase tracking-wide">
-												{category.name}
-											</h4>
-											<ul className="flex flex-col gap-3">
-												{category.items.map((item) => (
-													<li
-														key={item}
-														className="flex items-start gap-3 text-slate-600"
-													>
-														<div className="mt-0.5 shrink-0 w-5 h-5 rounded-full bg-amber-100 flex items-center justify-center">
-															<Check
-																className="w-3 h-3 text-amber-600"
-																strokeWidth={3}
-															/>
-														</div>
-														<span className="text-[15px] font-medium leading-snug">
-															{item}
-														</span>
-													</li>
-												))}
-											</ul>
-										</motion.div>
-									))}
-								</div>
-
-								{pkg.categories.length > 1 && (
-									<button
-										onClick={() => toggleExpand(index)}
-										className="mt-8 flex items-center justify-center gap-1.5 w-full py-3 rounded-lg border border-slate-200 text-slate-600 text-sm font-bold hover:bg-slate-50 hover:text-slate-900 transition-colors"
-									>
-										{isExpanded ? (
-											<>
-												View Less <ChevronUp className="w-4 h-4" />
-											</>
-										) : (
-											<>
-												View All Features <ChevronDown className="w-4 h-4" />
-											</>
+											<div className="absolute top-0 left-1/2 z-20 -translate-x-1/2 -translate-y-1/2">
+												<div className="rounded-full bg-amber-500 px-4 py-1.5 font-bold text-white text-xs uppercase tracking-wider shadow-amber-500/30 shadow-lg">
+													Most Popular
+												</div>
+											</div>
 										)}
-									</button>
-								)}
-								</div>
-								</motion.div>
-							</CarouselItem>
-						);
-					})}
+
+										<div className="relative z-10 flex h-full flex-col p-8 sm:p-10">
+											<div className="mb-8">
+												<h3 className="mb-3 font-bold text-2xl text-slate-900 tracking-tight">
+													{pkg.title}
+												</h3>
+												<p className="h-10 font-medium text-slate-500 text-sm">
+													{pkg.subtitle}
+												</p>
+											</div>
+
+											<div className="mb-8 flex flex-col border-slate-100 border-b pb-8">
+												<div className="flex items-end gap-2">
+													<span className="font-extrabold text-4xl text-slate-900 leading-none tracking-tight xl:text-5xl">
+														{pkg.price}
+													</span>
+												</div>
+												<span className="mt-2 font-medium text-slate-500 text-sm">
+													{pkg.priceSub}
+												</span>
+											</div>
+
+											<Button
+												className="mb-10 h-14 w-full shrink-0 rounded-xl bg-black font-bold text-base text-white shadow-black/10 shadow-lg transition-all hover:bg-slate-900"
+												nativeButton={false}
+												onClick={(e) => {
+													e.preventDefault();
+													document
+														.getElementById("contact")
+														?.scrollIntoView({ behavior: "smooth" });
+												}}
+												render={<Link href="#contact" />}
+											>
+												{pkg.popular ? "Get Started Now" : "Choose Plan"}
+											</Button>
+
+											<div className="flex flex-1 flex-col gap-8">
+												{visibleCategories.map((category) => (
+													<motion.div
+														animate={{ opacity: 1, height: "auto" }}
+														className="flex flex-col gap-4"
+														initial={{ opacity: 0, height: 0 }}
+														key={category.name}
+														transition={{ duration: 0.3 }}
+													>
+														<h4 className="font-bold text-[15px] text-slate-900 uppercase tracking-wide">
+															{category.name}
+														</h4>
+														<ul className="flex flex-col gap-3">
+															{category.items.map((item) => (
+																<li
+																	className="flex items-start gap-3 text-slate-600"
+																	key={item}
+																>
+																	<div className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-amber-100">
+																		<Check
+																			className="h-3 w-3 text-amber-600"
+																			strokeWidth={3}
+																		/>
+																	</div>
+																	<span className="font-medium text-[15px] leading-snug">
+																		{item}
+																	</span>
+																</li>
+															))}
+														</ul>
+													</motion.div>
+												))}
+											</div>
+
+											{pkg.categories.length > 1 && (
+												<button
+													className="mt-8 flex w-full items-center justify-center gap-1.5 rounded-lg border border-slate-200 py-3 font-bold text-slate-600 text-sm transition-colors hover:bg-slate-50 hover:text-slate-900"
+													onClick={() => toggleExpand(index)}
+												>
+													{isExpanded ? (
+														<>
+															View Less <ChevronUp className="h-4 w-4" />
+														</>
+													) : (
+														<>
+															View All Features{" "}
+															<ChevronDown className="h-4 w-4" />
+														</>
+													)}
+												</button>
+											)}
+										</div>
+									</motion.div>
+								</CarouselItem>
+							);
+						})}
 					</CarouselContent>
-					<div className="flex items-center justify-center gap-4 mt-4 lg:hidden">
-						<CarouselPrevious className="static translate-y-0 h-12 w-12 bg-white border-slate-200 text-slate-700 hover:bg-slate-50 hover:text-amber-600 shadow-sm" />
-						<CarouselNext className="static translate-y-0 h-12 w-12 bg-white border-slate-200 text-slate-700 hover:bg-slate-50 hover:text-amber-600 shadow-sm" />
+					<div className="mt-4 flex items-center justify-center gap-4 lg:hidden">
+						<CarouselPrevious className="static h-12 w-12 translate-y-0 border-slate-200 bg-white text-slate-700 shadow-sm hover:bg-slate-50 hover:text-amber-600" />
+						<CarouselNext className="static h-12 w-12 translate-y-0 border-slate-200 bg-white text-slate-700 shadow-sm hover:bg-slate-50 hover:text-amber-600" />
 					</div>
 				</Carousel>
 			</div>

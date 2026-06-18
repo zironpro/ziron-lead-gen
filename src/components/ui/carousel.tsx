@@ -3,20 +3,19 @@
 import * as React from "react";
 
 import { EmblaCarouselType } from "embla-carousel";
-import Autoplay, { AutoplayOptionsType } from "embla-carousel-autoplay";
 import AutoScroll, { AutoScrollOptionsType } from "embla-carousel-auto-scroll";
+import Autoplay, { AutoplayOptionsType } from "embla-carousel-autoplay";
 import useEmblaCarousel, {
 	type UseEmblaCarouselType,
 } from "embla-carousel-react";
 import { WheelGesturesPlugin } from "embla-carousel-wheel-gestures";
-import { motion, type Transition } from "motion/react";
-
-import { Button } from "@/components/ui/button";
-
 import {
 	ChevronLeft as IconCaretLeft,
 	ChevronRight as IconCaretRight,
 } from "lucide-react";
+import { motion, type Transition } from "motion/react";
+
+import { Button } from "@/components/ui/button";
 
 import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
 import { cn } from "@/lib/utils";
