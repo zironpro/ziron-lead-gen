@@ -154,7 +154,7 @@ export function Package() {
 	};
 
 	return (
-		<section className="pt-16 md:pt-24 pb-16 md:pb-24 relative border-b border-slate-100 bg-slate-50 overflow-hidden">
+		<section id="pricing" className="pt-16 md:pt-24 pb-16 md:pb-24 relative border-b border-slate-100 bg-slate-50 overflow-hidden">
 			{/* Decorative Background */}
 			<div className="absolute top-0 left-0 w-full h-[500px] bg-white rounded-b-[100px] sm:rounded-b-[200px] z-0 shadow-[0_20px_60px_-20px_rgba(0,0,0,0.03)] pointer-events-none" />
 
@@ -167,7 +167,8 @@ export function Package() {
 					transition={{ duration: 0.6 }}
 					className="flex flex-col items-center justify-center mb-16 text-center"
 				>
-					<Badge className="bg-amber-100 text-amber-700 hover:bg-amber-100 border-none mb-6 px-4 py-1.5 text-xs font-bold tracking-wider rounded-lg uppercase">
+					<Badge className="bg-slate-900 text-white hover:bg-slate-800 border-none mb-6 px-4 py-1.5 text-xs font-semibold tracking-wider rounded-lg">
+						<span className="w-2 h-2 rounded-full bg-amber-500 mr-2"></span>
 						Pricing Plans
 					</Badge>
 					<h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight mb-6">
@@ -185,7 +186,7 @@ export function Package() {
 					opts={{ align: "center", loop: false }} 
 					className="w-full max-w-full"
 				>
-					<CarouselContent className="-ml-4 md:-ml-8 items-stretch pt-6 pb-6">
+					<CarouselContent className="-ml-4 md:-ml-8 items-start pt-6 pb-6">
 						{packages.map((pkg, index) => {
 							const isExpanded = expandedCards.includes(index);
 							const visibleCategories = isExpanded ? pkg.categories : pkg.categories.slice(0, 1);
