@@ -15,7 +15,7 @@ export function Transformation() {
  transition={{ duration: 0.6 }}
  className="flex flex-col items-center justify-center mb-16 text-center"
  >
- <Badge className="bg-slate-900 text-white hover:bg-slate-800 border-none mb-6 px-4 py-1.5 text-xs font-semibold tracking-wider rounded-full">
+ <Badge className="bg-slate-900 text-white hover:bg-slate-800 border-none mb-6 px-4 py-1.5 text-xs font-semibold tracking-wider rounded-lg">
  <span className="w-2 h-2 rounded-full bg-amber-500 mr-2"></span>
  Before & After
  </Badge>
@@ -30,7 +30,7 @@ export function Transformation() {
  whileInView={{ opacity: 1, y: 0 }}
  viewport={{ once: true }}
  transition={{ duration: 0.8 }}
- className="bg-white rounded-2xl border border-slate-200 p-8 md:p-16 relative flex flex-col md:flex-row items-center justify-between gap-12 md:gap-8"
+ className="bg-white rounded-lg border border-slate-200 p-8 md:p-16 relative flex flex-col md:flex-row items-center justify-between gap-12 md:gap-8"
  >
  
  {/* Before Column */}
@@ -41,7 +41,7 @@ export function Transformation() {
  </p>
  
  {/* Fake IG Grid (Before) */}
- <div className="bg-white border border-slate-200 rounded-2xl overflow-hidden w-full max-w-[260px] mx-auto shadow-sm mb-8 opacity-70 grayscale">
+ <div className="bg-white border border-slate-200 rounded-lg overflow-hidden w-full max-w-[260px] mx-auto shadow-sm mb-8 opacity-70 grayscale">
  <div className="flex items-center justify-between p-3 border-b border-slate-100">
  <div className="flex items-center gap-2">
  <div className="w-6 h-6 rounded-full bg-slate-200"></div>
@@ -85,11 +85,11 @@ export function Transformation() {
  </p>
  
  {/* Fake IG Grid (After) */}
- <div className="bg-white border border-slate-200 rounded-2xl overflow-hidden w-full max-w-[260px] mx-auto shadow-2xl shadow-amber-500/10 mb-8 transform hover:-translate-y-2 transition-transform duration-500">
+ <div className="bg-white border border-slate-200 rounded-lg overflow-hidden w-full max-w-[260px] mx-auto shadow-2xl shadow-amber-500/10 mb-8 transform hover:-translate-y-2 transition-transform duration-500">
  <div className="flex items-center justify-between p-3 border-b border-slate-100">
  <div className="flex items-center gap-2">
  <div className="w-6 h-6 rounded-full bg-gradient-to-tr from-amber-400 via-indigo-500 to-violet-500 p-[2px]">
- <div className="w-full h-full bg-white rounded-full border-[1.5px] border-white"></div>
+ <div className="w-full h-full bg-white rounded-lg border-[1.5px] border-white"></div>
  </div>
  <div className="w-16 h-2 bg-slate-900 rounded"></div>
  </div>

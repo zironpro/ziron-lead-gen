@@ -48,7 +48,7 @@ export function NextSectionButton() {
       >
         <button
           onClick={handleClick}
-          className="bg-amber-500 p-3 rounded-full shadow-lg shadow-amber-500/20 border-none hover:bg-amber-400 hover:-translate-y-1 transition-all duration-300 flex items-center justify-center animate-bounce group cursor-pointer"
+          className="bg-amber-500 p-3 rounded-lg shadow-lg shadow-amber-500/20 border-none hover:bg-amber-400 hover:-translate-y-1 transition-all duration-300 flex items-center justify-center animate-bounce group cursor-pointer"
           aria-label={isBottom ? "Scroll to top" : "Scroll to next section"}
         >
           {isBottom ? (

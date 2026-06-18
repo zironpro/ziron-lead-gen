@@ -364,7 +364,7 @@ function DotButton({ selected = false, onClick }: DotButtonProps) {
 			// 	height: selected ? 28 : 12,
 			// }}
 			className={cn(
-				"flex cursor-pointer select-none items-center justify-center rounded-full border-none bg-primary shadow-sm transition-colors",
+				"flex cursor-pointer select-none items-center justify-center rounded-lg border-none bg-primary shadow-sm transition-colors",
 				selected ? "bg-white" : "bg-surface"
 			)}
 			initial={false}

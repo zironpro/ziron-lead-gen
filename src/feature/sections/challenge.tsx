@@ -13,31 +13,31 @@ export function Challenge() {
       description: "Very low likes, comments & reach, making the brand feel stagnant.",
       bgClass: "bg-amber-50/50 hover:bg-amber-50",
       borderClass: "hover:border-amber-200",
-      iconBgClass: "group-hover:bg-amber-100"
+      iconBgClass: "bg-amber-100 group-hover:bg-amber-200"
     },
     {
-      icon: <FileX className="w-6 h-6 text-rose-500" />,
+      icon: <FileX className="w-6 h-6 text-rose-600" />,
       title: "No Quality Leads",
       description: "Zero inquiries or property requests from their social presence.",
       bgClass: "bg-rose-50/50 hover:bg-rose-50",
       borderClass: "hover:border-rose-200",
-      iconBgClass: "group-hover:bg-rose-100"
+      iconBgClass: "bg-rose-100 group-hover:bg-rose-200"
     },
     {
-      icon: <CalendarMinus className="w-6 h-6 text-blue-500" />,
+      icon: <CalendarMinus className="w-6 h-6 text-blue-600" />,
       title: "Inconsistent Posting",
       description: "Random posting with no clear strategy or visual identity.",
       bgClass: "bg-blue-50/50 hover:bg-blue-50",
       borderClass: "hover:border-blue-200",
-      iconBgClass: "group-hover:bg-blue-100"
+      iconBgClass: "bg-blue-100 group-hover:bg-blue-200"
     },
     {
-      icon: <Target className="w-6 h-6 text-emerald-500" />,
+      icon: <Target className="w-6 h-6 text-emerald-600" />,
       title: "Competitors Ahead",
       description: "Competitors were capturing all the high-value real estate leads.",
       bgClass: "bg-emerald-50/50 hover:bg-emerald-50",
       borderClass: "hover:border-emerald-200",
-      iconBgClass: "group-hover:bg-emerald-100"
+      iconBgClass: "bg-emerald-100 group-hover:bg-emerald-200"
     }
   ];
 
@@ -57,7 +57,7 @@ export function Challenge() {
   };
 
   return (
-    <section className="py-16 md:py-24 relative border-b border-slate-100">
+    <section className="py-10 md:py-16 relative border-b border-slate-100 bg-neutral-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[1200px]">
         
         {/* Header */}
@@ -68,12 +68,12 @@ export function Challenge() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto mb-20"
         >
-          <Badge className="bg-slate-900 text-white hover:bg-slate-800 border-none mb-6 px-4 py-1.5 text-xs font-semibold tracking-wider rounded-full">
+          <Badge className="bg-slate-900 text-white hover:bg-slate-800 border-none mb-6 px-4 py-1.5 text-xs font-semibold tracking-wider rounded-lg">
             <span className="w-2 h-2 rounded-full bg-amber-500 mr-2"></span>
             Before Working With Us
           </Badge>
           <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
-            Great Business,<br className="hidden md:block" /> But Zero Social Leads.
+            A Real Client Growth Story Backed by Results
           </h2>
           <p className="mt-6 text-lg text-slate-600">
             Despite offering top-tier real estate services, their digital presence wasn't reflecting their true value.
@@ -92,7 +92,7 @@ export function Challenge() {
             <motion.div key={index} variants={itemVariants} className="h-full">
               <Card className={`h-full border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group cursor-default ${item.bgClass} ${item.borderClass}`}>
                 <CardHeader className="pb-4">
-                  <div className={`w-14 h-14 rounded-xl bg-white border border-slate-100 shadow-sm flex items-center justify-center mb-4 group-hover:scale-110 transition-all duration-300 ${item.iconBgClass}`}>
+                  <div className={`w-14 h-14 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-all duration-300 ${item.iconBgClass}`}>
                     {item.icon}
                   </div>
                   <CardTitle className="text-xl font-bold text-slate-900">

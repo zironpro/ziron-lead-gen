@@ -53,7 +53,7 @@ export function Clients() {
             <CarouselContent className="-ml-2 md:-ml-4">
               {clientLogos.map((logo, index) => (
                 <CarouselItem key={index} className="pl-2 md:pl-4 basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/5">
-                  <div className="flex items-center justify-center p-4 h-24 rounded-xl border border-transparent hover:border-slate-100 hover:bg-slate-50 transition-all duration-300 group cursor-default">
+                  <div className="flex items-center justify-center p-4 h-24 rounded-lg border border-transparent hover:border-slate-100 hover:bg-slate-50 transition-all duration-300 group cursor-default">
                     <Image 
                       src={logo.src} 
                       alt={logo.name} 

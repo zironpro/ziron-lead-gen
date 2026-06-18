@@ -46,7 +46,7 @@ export function Results() {
  {/* Header */}
  <div className="text-center mb-16 md:mb-20">
  <div className="flex flex-col items-center justify-center gap-4 w-full">
- <Badge className="bg-slate-900 text-white hover:bg-slate-800 border-none mb-6 px-4 py-1.5 text-xs font-semibold tracking-wider rounded-full flex items-center justify-center w-fit mx-auto">
+ <Badge className="bg-slate-900 text-white hover:bg-slate-800 border-none mb-6 px-4 py-1.5 text-xs font-semibold tracking-wider rounded-lg flex items-center justify-center w-fit mx-auto">
  <span className="w-2 h-2 rounded-full bg-amber-500 mr-2"></span>
  A Real Client Growth Story Backed by Results
  </Badge>
@@ -57,7 +57,7 @@ export function Results() {
  </div>
 
  {/* 2x2 Mobile / 4-col Desktop Grid Box */}
- <div className="bg-white rounded-2xl p-6 md:p-10 border border-slate-200">
+ <div className="bg-white rounded-lg p-6 md:p-10 border border-slate-200">
  <div className="grid grid-cols-2 md:grid-cols-4 relative">
  {metrics.map((metric, index) => (
  <div 
@@ -70,7 +70,7 @@ export function Results() {
  index < 2 ? 'border-b md:border-b-0' : ''
  }`}
  >
- <div className="w-14 h-14 rounded-full bg-slate-950 flex items-center justify-center mb-4 shadow-lg shadow-slate-900/20 hover:scale-110 transition-transform cursor-default">
+ <div className="w-14 h-14 rounded-lg bg-slate-950 flex items-center justify-center mb-4 shadow-lg shadow-slate-900/20 hover:scale-110 transition-transform cursor-default">
  {metric.icon}
  </div>
  <div className="text-2xl md:text-3xl font-black text-amber-500 mb-2">{metric.value}</div>

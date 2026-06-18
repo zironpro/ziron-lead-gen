@@ -26,7 +26,7 @@ export function Package() {
   ];
 
   return (
-    <section className="pt-16 md:pt-24 pb-8 md:pb-12 relative border-b border-slate-100">
+    <section className="pt-10 md:pt-16 pb-8 md:pb-12 relative border-b border-slate-100 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
         
         {/* Header */}
@@ -37,7 +37,7 @@ export function Package() {
           transition={{ duration: 0.6 }}
           className="flex flex-col items-center justify-center mb-16 text-center"
         >
-          <Badge className="bg-slate-900 text-white hover:bg-slate-800 border-none mb-6 px-4 py-1.5 text-xs font-semibold tracking-wider rounded-full">
+          <Badge className="bg-slate-900 text-white hover:bg-slate-800 border-none mb-6 px-4 py-1.5 text-xs font-semibold tracking-wider rounded-lg">
             <span className="w-2 h-2 rounded-full bg-amber-500 mr-2"></span>
             What's Included
           </Badge>
@@ -54,10 +54,10 @@ export function Package() {
           transition={{ duration: 0.8 }}
           className="flex justify-center"
         >
-          <div className="w-full max-w-[440px] bg-white rounded-2xl border border-slate-200 hover:border-amber-200 transition-colors duration-300 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)] overflow-hidden relative">
+          <div className="w-full max-w-[440px] bg-white rounded-lg border border-slate-200 hover:border-amber-200 transition-colors duration-300 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)] overflow-hidden relative">
             
             {/* Gradient background layers */}
-            <div className="absolute top-0 left-0 right-0 h-[400px] overflow-hidden pointer-events-none z-0 rounded-t-2xl">
+            <div className="absolute top-0 left-0 right-0 h-[400px] overflow-hidden pointer-events-none z-0 rounded-t-lg">
               {/* Top blue hint */}
               <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-full h-[200px] bg-blue-100/60 blur-[60px]" />
               {/* Sunset orange/yellow band behind button */}
@@ -87,7 +87,7 @@ export function Package() {
               </div>
 
               {/* Button */}
-              <Button className="w-full bg-[#1c1c1c] hover:bg-black text-white rounded-[1.25rem] h-14 text-[15px] font-semibold mb-10 shadow-lg shadow-black/5 transition-all">
+              <Button className="w-full bg-[#1c1c1c] hover:bg-black text-white rounded-lg h-14 text-[15px] font-semibold mb-10 shadow-lg shadow-black/5 transition-all">
                 View All Packages
               </Button>
 

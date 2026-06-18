@@ -29,7 +29,7 @@ export function Strategy() {
   ];
 
   return (
-    <section className="py-16 md:py-24 relative border-b border-slate-100">
+    <section className="py-10 md:py-16 relative border-b border-slate-100">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[1200px]">
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-8 items-start relative">
@@ -81,13 +81,13 @@ export function Strategy() {
                   )}
 
                   {/* Icon Container */}
-                  <div className="w-16 h-16 shrink-0 rounded-full bg-amber-50 text-amber-600 flex items-center justify-center relative z-10 group-hover:bg-amber-600 group-hover:text-white transition-all duration-300 shadow-sm border border-amber-100 group-hover:shadow-amber-200/50 group-hover:shadow-lg">
+                  <div className="w-16 h-16 shrink-0 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center relative z-10 group-hover:bg-amber-600 group-hover:text-white transition-all duration-300 shadow-sm border border-amber-100 group-hover:shadow-amber-200/50 group-hover:shadow-lg">
                     <div className="transition-colors duration-300">
                       {step.icon}
                     </div>
                     
                     {/* Step Number Badge */}
-                    <div className="absolute -top-2 -right-2 w-7 h-7 rounded-full bg-slate-900 text-white flex items-center justify-center font-bold text-xs border-[2px] border-white shadow-sm z-20">
+                    <div className="absolute -top-2 -right-2 w-7 h-7 rounded-lg bg-slate-900 text-white flex items-center justify-center font-bold text-xs border-[2px] border-white shadow-sm z-20">
                       {index + 1}
                     </div>
                   </div>
@@ -113,9 +113,9 @@ export function Strategy() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="mb-12 lg:mb-0 text-center lg:text-left bg-white border border-slate-300 rounded-[2rem] p-8 md:p-12"
+              className="mb-12 lg:mb-0 text-center lg:text-left bg-white border border-slate-300 rounded-lg p-8 md:p-12"
             >
-              <Badge className="bg-slate-900 text-white hover:bg-slate-800 border-none mb-6 px-4 py-1.5 text-xs font-semibold tracking-wider rounded-full">
+              <Badge className="bg-slate-900 text-white hover:bg-slate-800 border-none mb-6 px-4 py-1.5 text-xs font-semibold tracking-wider rounded-lg">
                 <span className="w-2 h-2 rounded-full bg-amber-500 mr-2"></span>
                 Our Strategy
               </Badge>

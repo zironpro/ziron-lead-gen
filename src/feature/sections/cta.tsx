@@ -40,7 +40,7 @@ export function CTC() {
           {/* Content */}
           <div className="relative z-10 flex flex-col items-start gap-8 md:gap-12 max-w-2xl">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight">
-              We Build high-converting Digital Experiences That <span className="text-amber-400">Convert Better, Faster.</span>
+              Ready to grow? <br /><span className="text-amber-400"> We’re ready to go.</span>
             </h2>
           </div>
 
@@ -48,16 +48,16 @@ export function CTC() {
           <div className="relative z-10 flex flex-col shrink-0 md:items-end">
             <p className="text-[15px] font-semibold mb-6 text-white uppercase tracking-wider">Stay Connected</p>
             <div className="flex gap-4">
-              <a href="#" className="w-14 h-14 bg-black/40 rounded-2xl flex items-center justify-center hover:bg-black hover:scale-105 transition-all">
+              <a href="#" className="w-14 h-14 bg-black/40 rounded-lg flex items-center justify-center hover:bg-black hover:scale-105 transition-all">
                 <LinkedinIcon className="w-6 h-6 text-white" />
               </a>
-              <a href="#" className="w-14 h-14 bg-black/40 rounded-2xl flex items-center justify-center hover:bg-black hover:scale-105 transition-all">
+              <a href="#" className="w-14 h-14 bg-black/40 rounded-lg flex items-center justify-center hover:bg-black hover:scale-105 transition-all">
                 <InstagramIcon className="w-6 h-6 text-white" />
               </a>
-              <a href="#" className="w-14 h-14 bg-black/40 rounded-2xl flex items-center justify-center hover:bg-black hover:scale-105 transition-all">
+              <a href="#" className="w-14 h-14 bg-black/40 rounded-lg flex items-center justify-center hover:bg-black hover:scale-105 transition-all">
                 <FacebookIcon className="w-6 h-6 text-white" />
               </a>
-              <a href="https://wa.me/971566646539" target="_blank" rel="noopener noreferrer" className="w-14 h-14 bg-black/40 rounded-2xl flex items-center justify-center hover:bg-black hover:scale-105 transition-all">
+              <a href="https://wa.me/971566646539" target="_blank" rel="noopener noreferrer" className="w-14 h-14 bg-black/40 rounded-lg flex items-center justify-center hover:bg-black hover:scale-105 transition-all">
                 <WhatsAppIcon className="w-6 h-6 text-white" />
               </a>
             </div>

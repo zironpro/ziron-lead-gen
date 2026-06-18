@@ -10,7 +10,7 @@ import { CTC } from "./sections/cta";
 
 export function HomePageView() {
   return (
-    <main className="min-h-screen bg-slate-50 selection:bg-amber-100 selection:text-amber-900 font-sans">
+    <main className="min-h-screen selection:bg-amber-100 selection:text-amber-900 font-sans">
       <Hero />
       <Clients />
       <Challenge />

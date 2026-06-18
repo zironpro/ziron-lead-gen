@@ -24,7 +24,7 @@ export default function RootLayout({
     >
       <body
         className={cn(
-          "min-h-full flex flex-col font-sans text-gray-900 bg-slate-50 m-0 p-0 overflow-x-hidden w-full",
+          "min-h-full flex flex-col font-sans text-gray-900 bg-stone-100 m-0 p-0 overflow-x-hidden w-full",
           "antialiased",
           clash.variable,
           inter.className,

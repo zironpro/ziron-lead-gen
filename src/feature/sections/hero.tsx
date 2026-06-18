@@ -34,7 +34,7 @@ function Counter({ target, duration = 2000 }: { target: number, duration?: numbe
 
 export function Hero() {
   return (
-    <section className="relative text-slate-900 py-16 md:py-24 overflow-hidden">
+    <section className="relative text-slate-900 py-10 md:py-16 overflow-hidden">
       {/* Background decoration */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
         <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[50%] rounded-full bg-amber-100/50 blur-3xl" />
@@ -53,7 +53,7 @@ export function Hero() {
           >
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-amber-50 border border-amber-100 text-amber-600 text-sm font-medium">
               <TrendingUp className="w-4 h-4" />
-              <span>Proven UAE Real Estate Strategy</span>
+              <span>Proven Digital Marketing in UAE</span>
             </div>
             
             <h1 className="text-5xl md:text-6xl lg:text-[64px] font-extrabold leading-[1.1] tracking-tight text-slate-900">
@@ -87,7 +87,7 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="w-full lg:w-1/2 flex justify-center lg:justify-end mt-12 lg:mt-0"
           >
-            <div className="relative w-full max-w-lg rounded-[2rem] shadow-2xl shadow-slate-300/50 overflow-hidden border-4 border-white">
+            <div className="relative w-full max-w-lg rounded-lg shadow-2xl shadow-slate-300/50 overflow-hidden border-4 border-white">
               <img 
                 src="/image/leads%20hero%20image.jpeg" 
                 alt="Ziron Pro Leads Generation Banner" 
