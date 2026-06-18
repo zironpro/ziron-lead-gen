@@ -35,23 +35,28 @@ export function Transformation() {
 				>
 					{/* Before Column */}
 					<div className="w-full md:w-5/12 flex flex-col items-center text-center">
-						<Badge
-							variant="outline"
-							className="bg-rose-50 text-rose-600 border-rose-200 mb-6"
-						>
-							BEFORE
-						</Badge>
-						<p className="text-slate-500 text-sm mb-8 h-10 font-medium">
-							Low engagement <br /> No consistent leads
-						</p>
+						<div className="flex flex-col items-center">
+							<div className="flex flex-col items-center gap-2 mb-8">
+								<div className="px-8 py-1.5 rounded-lg bg-white border border-amber-500 text-amber-500 font-bold text-lg mb-2 shadow-lg">
+									Before
+								</div>
+								<div className="px-4 py-1 rounded-full bg-red-600 text-white font-medium text-sm shadow-md">
+									Low Engagement
+								</div>
+								<div className="px-4 py-1 rounded-full bg-red-600 text-white font-medium text-sm shadow-md">
+									No Consistent Leads
+								</div>
+							</div>
+						</div>
 
 						{/* Before Image */}
-						<div className="rounded-lg overflow-hidden w-full max-w-[260px] mx-auto shadow-sm mb-8 opacity-80 border border-slate-200 grayscale-[0.3]">
+						<div className="overflow-hidden w-full max-w-[260px] mx-auto shadow-2xl shadow-amber-500/10 mb-8 transform hover:-translate-y-2 transition-transform duration-500">
 							<Image
 								src="/image/before.png"
 								alt="Before transformation"
 								width={260}
 								height={400}
+								priority
 								className="w-full h-auto object-cover"
 							/>
 						</div>
@@ -107,23 +112,28 @@ export function Transformation() {
 
 					{/* After Column */}
 					<div className="w-full md:w-5/12 flex flex-col items-center text-center">
-						<Badge
-							variant="outline"
-							className="bg-emerald-50 text-emerald-600 border-emerald-200 mb-6"
-						>
-							AFTER
-						</Badge>
-						<p className="text-slate-900 text-sm mb-8 font-bold h-10">
-							High engagement <br /> Consistent inquiries
-						</p>
+						<div className="flex flex-col items-center">
+							<div className="flex flex-col items-center gap-2 mb-8">
+								<div className="px-8 py-1.5 rounded-lg bg-white border border-amber-500 text-amber-500 font-bold text-lg mb-2 shadow-lg">
+									After
+								</div>
+								<div className="px-4 py-1 rounded-full bg-green-600 text-white font-medium text-sm shadow-md">
+									High Engagement
+								</div>
+								<div className="px-4 py-1 rounded-full bg-green-600 text-white font-medium text-sm shadow-md">
+									Consistent Inquiries
+								</div>
+							</div>
+						</div>
 
 						{/* After Image */}
-						<div className="rounded-lg overflow-hidden w-full max-w-[260px] mx-auto shadow-2xl shadow-amber-500/10 mb-8 border border-slate-200 transform hover:-translate-y-2 transition-transform duration-500">
+						<div className="overflow-hidden w-full max-w-[260px] mx-auto shadow-2xl shadow-amber-500/10 mb-8 transform hover:-translate-y-2 transition-transform duration-500">
 							<Image
-								src="/image/after.jpeg"
+								src="/image/after.png"
 								alt="After transformation"
 								width={260}
 								height={400}
+								priority
 								className="w-full h-auto object-cover"
 							/>
 						</div>
