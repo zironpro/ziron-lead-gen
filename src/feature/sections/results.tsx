@@ -9,9 +9,9 @@ export function Results() {
 	const metrics = [
 		{
 			icon: <Users className="h-6 w-6 text-white" strokeWidth={1.5} />,
-			value: "87",
+			value: "50",
 			label: "Qualified Leads",
-			sublabel: "in 30 Days",
+			sublabel: "in 10 Days",
 		},
 		{
 			icon: (

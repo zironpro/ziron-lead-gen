@@ -28,7 +28,7 @@ function Counter({
 
 			// Easing function (easeOutQuart)
 			const easeProgress = 1 - Math.pow(1 - progress, 4);
-			setCount(Math.floor(easeProgress * target));
+			setCount(Math.round(easeProgress * target));
 
 			if (progress < 1) {
 				animationFrame = requestAnimationFrame(animate);
