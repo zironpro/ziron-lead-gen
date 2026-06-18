@@ -1,48 +1,101 @@
-import { ArrowRight, Phone } from "lucide-react";
+"use client";
+
+import { useState, useEffect } from "react";
+import { ArrowRight, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { motion } from "motion/react";
+
+function Counter({ target, duration = 2000 }: { target: number, duration?: number }) {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    let startTime: number | null = null;
+    let animationFrame: number;
+
+    const animate = (currentTime: number) => {
+      if (!startTime) startTime = currentTime;
+      const progress = Math.min((currentTime - startTime) / duration, 1);
+      
+      // Easing function (easeOutQuart)
+      const easeProgress = 1 - Math.pow(1 - progress, 4);
+      setCount(Math.floor(easeProgress * target));
+
+      if (progress < 1) {
+        animationFrame = requestAnimationFrame(animate);
+      }
+    };
+
+    animationFrame = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(animationFrame);
+  }, [target, duration]);
+
+  return <span>{count}</span>;
+}
 
 export function Hero() {
   return (
-    <section className="bg-[#0B1221] text-white py-16 md:py-24 relative overflow-hidden">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[1400px]">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-8">
+    <section className="relative bg-slate-50 text-slate-900 py-20 md:py-32 overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
+        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[50%] rounded-full bg-amber-100/50 blur-3xl" />
+        <div className="absolute bottom-[10%] right-[-5%] w-[30%] h-[40%] rounded-full bg-orange-100/50 blur-3xl" />
+      </div>
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[1200px] relative z-10">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-16">
+          
           {/* Text Content */}
-          <div className="w-full lg:w-1/2 space-y-6 z-10">
-            <h3 className="text-[#FF6B00] font-semibold text-sm tracking-widest uppercase">
-              Success Story
-            </h3>
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="w-full lg:w-1/2 space-y-8"
+          >
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-amber-50 border border-amber-100 text-amber-600 text-sm font-medium">
+              <TrendingUp className="w-4 h-4" />
+              <span>Proven UAE Real Estate Strategy</span>
+            </div>
             
-            <h1 className="text-4xl md:text-5xl lg:text-[54px] font-bold leading-[1.15] tracking-tight">
-              How We Generated <br />
-              <span className="text-[#FF6B00]">87 Qualified Leads</span> <br />
-              in 30 Days
+            <h1 className="text-5xl md:text-6xl lg:text-[64px] font-extrabold leading-[1.1] tracking-tight text-slate-900">
+              We Generated <br />
+              <span className="text-amber-600 inline-block">
+                <Counter target={87} /> Qualified Leads
+              </span> <br />
+              in 30 Days.
             </h1>
             
-            <h2 className="text-xl md:text-2xl font-medium text-white/90 pt-2">
-              For a UAE Real Estate Company
-            </h2>
-            
-            <p className="text-gray-400 text-base md:text-lg max-w-md leading-relaxed">
-              Through a result-driven social media strategy, content creation & paid campaigns.
+            <p className="text-slate-600 text-lg md:text-xl max-w-lg leading-relaxed">
+              Stop guessing. Start closing. Discover how our data-driven social media and paid campaigns scale real estate businesses.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Button className="bg-[#FF6B00] hover:bg-[#e66000] text-white px-8 h-14 rounded-md font-medium text-base gap-2 border-0">
+            {/* Call to Action Buttons */}
+            <div className="flex flex-col sm:flex-row items-center gap-4 pt-4">
+              <Button className="bg-amber-500 hover:bg-amber-600 text-white rounded-lg px-8 h-14 font-bold text-lg shadow-lg shadow-amber-500/20 w-full sm:w-auto transition-all group">
                 Get Your Free Audit
-                <ArrowRight className="w-5 h-5" />
+                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
-              
-              <Button variant="outline" className="bg-transparent border-white/20 hover:bg-white/5 hover:border-white/40 hover:text-white text-white px-8 h-14 rounded-md font-medium text-base gap-2">
-                <Phone className="w-5 h-5" />
-                Chat on WhatsApp
+              <Button variant="outline" className="rounded-lg px-8 h-14 font-bold text-lg text-slate-700 border-slate-200 hover:bg-slate-50 hover:text-slate-900 w-full sm:w-auto transition-all shadow-sm">
+                View All Packages
               </Button>
             </div>
-          </div>
+          </motion.div>
           
-          {/* Phone Mockup Image / Illustration */}
-          <div className="w-full lg:w-1/2 flex justify-center lg:justify-end z-10">
-            {/* The placeholder phone image was removed. You can insert an <Image /> component here later. */}
-          </div>
+          {/* Hero Banner Image */}
+          <motion.div 
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="w-full lg:w-1/2 flex justify-center lg:justify-end mt-12 lg:mt-0"
+          >
+            <div className="relative w-full max-w-lg rounded-[2rem] shadow-2xl shadow-slate-300/50 overflow-hidden border-4 border-white">
+              <img 
+                src="/image/leads%20hero%20image.jpeg" 
+                alt="Ziron Pro Leads Generation Banner" 
+                className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-700"
+              />
+            </div>
+          </motion.div>
+
         </div>
       </div>
     </section>

@@ -1,83 +1,115 @@
-import { Users, CircleDollarSign, TrendingUp, UserPlus } from "lucide-react";
+"use client";
+
+import { Users, CircleDollarSign, TrendingUp, UserPlus } from"lucide-react";
+import { motion } from"motion/react";
+import { Badge } from "@/components/ui/badge";
 
 export function Results() {
-  return (
-    <section className="bg-white pt-20 md:pt-28 pb-10 md:pb-14 border-t border-gray-100">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
-        {/* Header */}
-        <div className="flex items-center justify-center gap-4 mb-16">
-          <div className="h-[2px] w-12 md:w-16 bg-[#FF6B00]"></div>
-          <h2 className="text-gray-900 font-extrabold text-sm md:text-base tracking-widest uppercase">
-            The Results
-          </h2>
-          <div className="h-[2px] w-12 md:w-16 bg-[#FF6B00]"></div>
-        </div>
+ const metrics = [
+ {
+ icon: <Users className="w-7 h-7 text-white"strokeWidth={1.5} />,
+ value:"87",
+ label:"Qualified Leads",
+ sublabel:"in 30 Days"
+ },
+ {
+ icon: <CircleDollarSign className="w-7 h-7 text-white"strokeWidth={1.5} />,
+ value:"AED 7.45",
+ label:"Cost Per Lead",
+ sublabel:"(Reduced by 46%)"
+ },
+ {
+ icon: <TrendingUp className="w-7 h-7 text-white"strokeWidth={1.5} />,
+ value:"+310%",
+ label:"Increase in Reach",
+ sublabel:"Organic & Paid"
+ },
+ {
+ icon: <UserPlus className="w-7 h-7 text-white"strokeWidth={1.5} />,
+ value:"23",
+ label:"New Customers",
+ sublabel:"Converted"
+ }
+ ];
 
-        {/* 2x2 Grid (Mobile) / 4-Col Grid (Desktop) */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-y-12 md:gap-y-0 gap-x-0 md:gap-x-0 mb-20 relative">
-          
-          {/* Card 1 */}
-          <div className="flex flex-col items-center text-center px-2 md:px-6">
-            <div className="w-16 h-16 md:w-20 md:h-20 bg-[#0B1221] rounded-full flex items-center justify-center mb-4 md:mb-6 shadow-lg">
-              <Users className="w-7 h-7 md:w-8 md:h-8 text-white" strokeWidth={1.5} />
-            </div>
-            <div className="text-3xl md:text-4xl font-bold text-[#FF6B00] mb-1 md:mb-2">87</div>
-            <div className="text-[13px] md:text-sm font-semibold text-gray-900">Qualified Leads</div>
-            <div className="text-[11px] md:text-xs text-gray-500 mt-1">in 30 Days</div>
-          </div>
+ return (
+ <section className="bg-slate-50 py-24 md:py-32">
+ <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[1000px]">
+ 
+ {/* Main Card Container */}
+ <motion.div 
+ initial={{ opacity: 0, y: 20 }}
+ whileInView={{ opacity: 1, y: 0 }}
+ viewport={{ once: true }}
+ transition={{ duration: 0.6 }}
+ className="bg-white rounded-[2.5rem] border border-slate-200 shadow-2xl shadow-slate-200/50 overflow-hidden"
+ >
+ {/* Top Border Accent */}
+ <div className="h-2 w-full bg-amber-500"></div>
 
-          {/* Card 2 */}
-          <div className="flex flex-col items-center text-center px-2 md:px-6 relative">
-            {/* Desktop Vertical Divider */}
-            <div className="hidden md:block absolute left-0 top-4 bottom-4 w-[1px] bg-gray-100"></div>
-            {/* Mobile Vertical Divider */}
-            <div className="absolute left-0 md:hidden top-2 bottom-2 w-[1px] bg-gray-100"></div>
-            
-            <div className="w-16 h-16 md:w-20 md:h-20 bg-[#0B1221] rounded-full flex items-center justify-center mb-4 md:mb-6 shadow-lg">
-              <CircleDollarSign className="w-7 h-7 md:w-8 md:h-8 text-white" strokeWidth={1.5} />
-            </div>
-            <div className="text-3xl md:text-4xl font-bold text-[#FF6B00] mb-1 md:mb-2">AED 7.45</div>
-            <div className="text-[13px] md:text-sm font-semibold text-gray-900">Cost Per Lead</div>
-            <div className="text-[11px] md:text-xs text-gray-500 mt-1 leading-tight">(Reduced by 46%)</div>
-          </div>
+ <div className="p-8 md:p-12">
+ 
+ {/* Header */}
+ <div className="text-center mb-12">
+ <div className="flex flex-col items-center justify-center gap-4 w-full">
+ <Badge variant="outline" className="text-amber-600 border-amber-200 bg-amber-50 mb-2 px-4 py-1 text-sm font-semibold tracking-wider">A Real Client Growth Story Backed by Results</Badge>
+ <div className="flex items-center justify-center gap-4 w-full max-w-md mx-auto">
+ <div className="h-px bg-slate-200 flex-1 hidden sm:block"></div>
+ <h3 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">Data That Speaks Volumes.</h3>
+ <div className="h-px bg-slate-200 flex-1 hidden sm:block"></div>
+ </div>
+ </div>
+ </div>
 
-          {/* Card 3 */}
-          <div className="flex flex-col items-center text-center px-2 md:px-6 relative pt-12 md:pt-0">
-            {/* Mobile Horizontal Divider */}
-            <div className="md:hidden absolute top-0 left-4 right-4 h-[1px] bg-gray-100"></div>
-            {/* Desktop Vertical Divider */}
-            <div className="hidden md:block absolute left-0 top-4 bottom-4 w-[1px] bg-gray-100"></div>
+ {/* 2x2 Mobile / 4-col Desktop Grid */}
+ <div className="grid grid-cols-2 md:grid-cols-4 gap-y-12 gap-x-6 relative">
+ {metrics.map((metric, index) => (
+ <div key={index} className="flex flex-col items-center text-center px-2">
+ <div className="w-16 h-16 rounded-full bg-slate-950 flex items-center justify-center mb-5 shadow-lg shadow-slate-900/20 hover:scale-110 transition-transform cursor-default">
+ {metric.icon}
+ </div>
+ <div className="text-3xl md:text-4xl font-black text-amber-500 mb-2">{metric.value}</div>
+ <div className="text-sm font-bold text-slate-900 leading-tight">{metric.label}</div>
+ <div className="text-xs text-slate-500 mt-1">{metric.sublabel}</div>
+ </div>
+ ))}
+ </div>
 
-            <div className="w-16 h-16 md:w-20 md:h-20 bg-[#0B1221] rounded-full flex items-center justify-center mb-4 md:mb-6 shadow-lg">
-              <TrendingUp className="w-7 h-7 md:w-8 md:h-8 text-white" strokeWidth={1.5} />
-            </div>
-            <div className="text-3xl md:text-4xl font-bold text-[#FF6B00] mb-1 md:mb-2">+310%</div>
-            <div className="text-[13px] md:text-sm font-semibold text-gray-900">Increase in Reach</div>
-            <div className="text-[11px] md:text-xs text-transparent mt-1 select-none">spacer</div>
-          </div>
+ {/* Performance Overview */}
+ <div className="mt-16 border-t border-slate-100 pt-10">
+ <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-8 gap-4">
+ <h4 className="text-base font-bold text-slate-900">Performance Overview</h4>
+ </div>
 
-          {/* Card 4 */}
-          <div className="flex flex-col items-center text-center px-2 md:px-6 relative pt-12 md:pt-0">
-            {/* Mobile Horizontal Divider */}
-            <div className="md:hidden absolute top-0 left-4 right-4 h-[1px] bg-gray-100"></div>
-            {/* Mobile Vertical Divider */}
-            <div className="absolute left-0 md:hidden top-14 bottom-2 w-[1px] bg-gray-100"></div>
-            {/* Desktop Vertical Divider */}
-            <div className="hidden md:block absolute left-0 top-4 bottom-4 w-[1px] bg-gray-100"></div>
+ {/* Mini Stats Grid */}
+ <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10">
+ <div className="bg-slate-50 p-4 rounded-2xl border border-slate-100">
+ <p className="text-xs text-slate-500 mb-1">Leads (WhatsApp)</p>
+ <div className="flex items-end gap-3">
+ <p className="text-2xl font-black text-slate-900">87</p>
+ <p className="text-[11px] text-emerald-500 font-bold mb-1 bg-emerald-50 px-2 py-0.5 rounded-full">↑ 318%</p>
+ </div>
+ </div>
+ <div className="bg-slate-50 p-4 rounded-2xl border border-slate-100">
+ <p className="text-xs text-slate-500 mb-1">Cost per Lead</p>
+ <div className="flex items-end gap-3">
+ <p className="text-2xl font-black text-slate-900">AED 7.45</p>
+ <p className="text-[11px] text-emerald-500 font-bold mb-1 bg-emerald-50 px-2 py-0.5 rounded-full">↓ 46%</p>
+ </div>
+ </div>
+ <div className="bg-slate-50 p-4 rounded-2xl border border-slate-100">
+ <p className="text-xs text-slate-500 mb-1">Amount Spent</p>
+ <div className="flex flex-col">
+ <p className="text-2xl font-black text-slate-900">AED 648.67</p>
+ <p className="text-[10px] text-slate-400 font-medium mt-1">vs Apr 1 - Apr 30</p>
+ </div>
+ </div>
+ </div>
+ </div>
 
-            <div className="w-16 h-16 md:w-20 md:h-20 bg-[#0B1221] rounded-full flex items-center justify-center mb-4 md:mb-6 shadow-lg">
-              <UserPlus className="w-7 h-7 md:w-8 md:h-8 text-white" strokeWidth={1.5} />
-            </div>
-            <div className="text-3xl md:text-4xl font-bold text-[#FF6B00] mb-1 md:mb-2">23</div>
-            <div className="text-[13px] md:text-sm font-semibold text-gray-900">New Customers</div>
-            <div className="text-[11px] md:text-xs text-gray-500 mt-1">Converted</div>
-          </div>
-
-        </div>
-
-
-
-      </div>
-    </section>
-  );
+ </div>
+ </motion.div>
+ </div>
+ </section>
+ );
 }

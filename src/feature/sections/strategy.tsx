@@ -1,70 +1,101 @@
-import { Users, MonitorPlay, Megaphone, Target, ChevronRight } from "lucide-react";
+"use client";
+
+import { Users, MonitorPlay, Megaphone, Target, ArrowRight } from "lucide-react";
+import { motion } from "motion/react";
+import { Badge } from "@/components/ui/badge";
 
 export function Strategy() {
   const steps = [
     {
-      icon: <Users className="w-8 h-8 text-white" strokeWidth={1.5} />,
+      icon: <Users className="w-6 h-6" />,
       title: "Research & Audit",
-      description: "We studied their market, audience & competitors"
+      description: "We studied their market, audience & competitors to find the gaps."
     },
     {
-      icon: <MonitorPlay className="w-8 h-8 text-white" strokeWidth={1.5} />,
+      icon: <MonitorPlay className="w-6 h-6" />,
       title: "Content Creation",
-      description: "High-quality posts, reels & property videos"
+      description: "High-quality posts, reels & property videos that build trust."
     },
     {
-      icon: <Megaphone className="w-8 h-8 text-white" strokeWidth={1.5} />,
+      icon: <Megaphone className="w-6 h-6" />,
       title: "Paid Campaigns",
-      description: "Targeted ads to reach serious property buyers"
+      description: "Targeted ads designed to reach serious, high-intent property buyers."
     },
     {
-      icon: <Target className="w-8 h-8 text-white" strokeWidth={1.5} />,
+      icon: <Target className="w-6 h-6" />,
       title: "Lead Generation",
-      description: "Optimized campaigns that bring qualified inquiries"
+      description: "Optimized campaigns that consistently bring qualified inquiries."
     }
   ];
 
   return (
-    <section className="bg-[#0B1221] py-20 md:py-28 relative">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-12 max-w-[1400px]">
+    <section className="bg-white py-24 md:py-32 relative border-b border-slate-100">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[1200px]">
         {/* Header */}
-        <div className="mb-16 md:mb-20">
-          <h3 className="text-[#FF6B00] font-semibold text-sm tracking-widest uppercase mb-4">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-16 md:mb-20 text-center"
+        >
+          <Badge variant="outline" className="text-amber-600 border-amber-200 bg-amber-50 mb-6 px-4 py-1 text-sm font-semibold tracking-wider">
             Our Strategy
-          </h3>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white tracking-tight">
-            Our 4-Step Growth Strategy
+          </Badge>
+          <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight">
+            The 4-Step Growth Blueprint
           </h2>
-        </div>
+        </motion.div>
 
         {/* Steps */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-6 relative">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8 relative">
           {steps.map((step, index) => (
-            <div key={index} className="flex flex-col items-center md:items-start text-center md:text-left relative group">
+            <motion.div 
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="flex flex-col items-center md:items-start text-center md:text-left relative group"
+            >
               
               {/* Icon Container */}
-              <div className="w-24 h-24 md:w-20 md:h-20 rounded-full border border-gray-700 bg-[#0B1221] flex items-center justify-center mb-6 relative z-10 group-hover:border-[#FF6B00] group-hover:scale-110 transition-all duration-300">
-                {step.icon}
+              <div className="w-16 h-16 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center mt-3 mb-6 relative z-10 group-hover:bg-amber-600 group-hover:text-white transition-all duration-300 shadow-sm border border-amber-100 group-hover:shadow-amber-200/50 group-hover:shadow-lg">
+                <div className="transition-colors duration-300">
+                  {step.icon}
+                </div>
+                
+                {/* Step Number Badge */}
+                <div className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-slate-900 text-white flex items-center justify-center font-bold text-sm border-[3px] border-white shadow-sm z-20">
+                  {index + 1}
+                </div>
               </div>
-              
+
               {/* Arrow linking to next step (Hidden on mobile, only between items on desktop) */}
               {index < steps.length - 1 && (
-                <div className="hidden md:block absolute top-10 left-[6rem] w-[calc(100%-4rem)] h-[1px] bg-gray-700 z-0">
+                <div className="hidden md:block absolute top-8 left-[4.5rem] w-[calc(100%-3rem)] h-[2px] bg-slate-100 z-0 overflow-hidden">
+                  <motion.div 
+                    initial={{ x: "-100%" }}
+                    whileInView={{ x: "100%" }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
+                    className="w-full h-full bg-amber-200"
+                  />
                   {/* Arrowhead */}
-                  <div className="absolute -right-3 top-1/2 -translate-y-1/2 text-gray-700">
-                    <ChevronRight className="w-5 h-5" />
+                  <div className="absolute -right-3 top-1/2 -translate-y-1/2 text-slate-300">
+                    <ArrowRight className="w-5 h-5" />
                   </div>
                 </div>
               )}
 
               {/* Text Content */}
-              <h4 className="text-lg md:text-xl font-bold text-white mb-3">
+              <h4 className="text-xl font-bold text-slate-900 mb-3">
                 {step.title}
               </h4>
-              <p className="text-gray-400 text-sm md:text-base leading-relaxed md:pr-4">
+              <p className="text-slate-600 text-sm md:text-base leading-relaxed">
                 {step.description}
               </p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
