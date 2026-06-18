@@ -6,7 +6,7 @@ export function WhatsAppButton() {
       href="https://wa.me/971566646539" // Ziron Pro's phone number
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 bg-amber-500 text-slate-950 shadow-lg shadow-amber-500/20 hover:bg-amber-400 hover:-translate-y-1 transition-all duration-300 rounded-[18px]"
+      className="fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 bg-amber-500 text-slate-950 shadow-lg shadow-amber-500/20 hover:bg-amber-400 hover:-translate-y-1 transition-all duration-300 rounded-[18px] cursor-pointer"
       aria-label="Chat with us on WhatsApp"
       initial={{ scale: 0, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}

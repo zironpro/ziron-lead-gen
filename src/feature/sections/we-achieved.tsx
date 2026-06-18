@@ -27,7 +27,7 @@ export function WeAchieved() {
  ];
 
  return (
- <section className="bg-slate-50 pb-24 md:pb-32 relative">
+ <section className="pb-16 md:pb-24 relative">
  <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[1200px]">
  <motion.div 
  initial={{ opacity: 0, y: 20 }}
@@ -38,16 +38,17 @@ export function WeAchieved() {
  >
  
  {/* Left Column: Info & CTA */}
- <div className="w-full lg:w-5/12 bg-white rounded-[2rem] p-8 md:p-10 border border-slate-200 shadow-xl shadow-slate-200/50 relative overflow-hidden lg:sticky lg:top-24">
+ <div className="w-full lg:w-5/12 bg-white rounded-lg p-8 md:p-10 border border-slate-200 shadow-xl shadow-slate-200/50 relative overflow-hidden lg:sticky lg:top-24">
  {/* Background decoration */}
  <div className="absolute top-0 right-0 -mt-16 -mr-16 w-48 h-48 bg-amber-50 rounded-full blur-3xl z-0"></div>
  
  <div className="relative z-10">
  <Badge className="bg-slate-900 text-white hover:bg-slate-800 border-none mb-6 px-4 py-1.5 text-xs font-semibold tracking-wider rounded-full">
+ <span className="w-2 h-2 rounded-full bg-amber-500 mr-2"></span>
  The Methodology
  </Badge>
  
- <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-4">
+ <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight mb-4">
  How We Achieved This Growth
  </h2>
  

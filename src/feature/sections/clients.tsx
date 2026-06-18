@@ -23,7 +23,7 @@ export function Clients() {
   ];
 
   return (
-    <section className="bg-white py-12 md:py-16 border-b border-slate-100">
+    <section className="py-8 md:py-12 border-b border-slate-100">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
         <motion.h4 
           initial={{ opacity: 0, y: 10 }}

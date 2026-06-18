@@ -1,6 +1,6 @@
 "use client";
 
-import { Users, MonitorPlay, Megaphone, Target, ArrowRight } from "lucide-react";
+import { Users, MonitorPlay, Megaphone, Target, ArrowDown } from "lucide-react";
 import { motion } from "motion/react";
 import { Badge } from "@/components/ui/badge";
 
@@ -29,74 +29,102 @@ export function Strategy() {
   ];
 
   return (
-    <section className="bg-white py-24 md:py-32 relative border-b border-slate-100">
+    <section className="py-16 md:py-24 relative border-b border-slate-100">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[1200px]">
-        {/* Header */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mb-16 md:mb-20 text-center"
-        >
-          <Badge variant="outline" className="text-amber-600 border-amber-200 bg-amber-50 mb-6 px-4 py-1 text-sm font-semibold tracking-wider">
-            Our Strategy
-          </Badge>
-          <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight">
-            The 4-Step Growth Blueprint
-          </h2>
-        </motion.div>
-
-        {/* Steps */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8 relative">
-          {steps.map((step, index) => (
+        
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-8 items-start relative">
+          
+          {/* Right Column: Steps Timeline */}
+          <div className="order-2 lg:order-2 relative">
             <motion.div 
-              key={index}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="flex flex-col items-center md:items-start text-center md:text-left relative group"
+              transition={{ duration: 0.6 }}
+              className="flex flex-col gap-12"
             >
-              
-              {/* Icon Container */}
-              <div className="w-16 h-16 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center mt-3 mb-6 relative z-10 group-hover:bg-amber-600 group-hover:text-white transition-all duration-300 shadow-sm border border-amber-100 group-hover:shadow-amber-200/50 group-hover:shadow-lg">
-                <div className="transition-colors duration-300">
-                  {step.icon}
-                </div>
-                
-                {/* Step Number Badge */}
-                <div className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-slate-900 text-white flex items-center justify-center font-bold text-sm border-[3px] border-white shadow-sm z-20">
-                  {index + 1}
-                </div>
-              </div>
+              {steps.map((step, index) => (
+                <motion.div 
+                  key={index}
+                  initial={{ opacity: 0.4 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 1.0 }}
+                  className="flex flex-row items-start relative group gap-6 md:gap-8"
+                >
+                  
+                  {/* Vertical Line linking to next step */}
+                  {index < steps.length - 1 && (
+                    <div className="absolute top-16 left-8 w-[2px] h-[calc(100%-1rem)] bg-slate-100 z-0 -ml-[1px]">
+                      <motion.div 
+                        initial={{ height: "0%" }}
+                        whileInView={{ height: "100%" }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: index * 1.0 + 0.4, ease: "easeInOut" }}
+                        className="absolute top-0 left-0 w-full bg-amber-400"
+                      />
+                      {/* Base Arrowhead */}
+                      <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 text-slate-200">
+                        <ArrowDown className="w-5 h-5" />
+                      </div>
+                      {/* Lit Arrowhead */}
+                      <motion.div 
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.1, delay: (index + 1) * 1.0 }}
+                        className="absolute -bottom-3 left-1/2 -translate-x-1/2 text-amber-400"
+                      >
+                        <ArrowDown className="w-5 h-5" />
+                      </motion.div>
+                    </div>
+                  )}
 
-              {/* Arrow linking to next step (Hidden on mobile, only between items on desktop) */}
-              {index < steps.length - 1 && (
-                <div className="hidden md:block absolute top-8 left-[4.5rem] w-[calc(100%-3rem)] h-[2px] bg-slate-100 z-0 overflow-hidden">
-                  <motion.div 
-                    initial={{ x: "-100%" }}
-                    whileInView={{ x: "100%" }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
-                    className="w-full h-full bg-amber-200"
-                  />
-                  {/* Arrowhead */}
-                  <div className="absolute -right-3 top-1/2 -translate-y-1/2 text-slate-300">
-                    <ArrowRight className="w-5 h-5" />
+                  {/* Icon Container */}
+                  <div className="w-16 h-16 shrink-0 rounded-full bg-amber-50 text-amber-600 flex items-center justify-center relative z-10 group-hover:bg-amber-600 group-hover:text-white transition-all duration-300 shadow-sm border border-amber-100 group-hover:shadow-amber-200/50 group-hover:shadow-lg">
+                    <div className="transition-colors duration-300">
+                      {step.icon}
+                    </div>
+                    
+                    {/* Step Number Badge */}
+                    <div className="absolute -top-2 -right-2 w-7 h-7 rounded-full bg-slate-900 text-white flex items-center justify-center font-bold text-xs border-[2px] border-white shadow-sm z-20">
+                      {index + 1}
+                    </div>
                   </div>
-                </div>
-              )}
 
-              {/* Text Content */}
-              <h4 className="text-xl font-bold text-slate-900 mb-3">
-                {step.title}
-              </h4>
-              <p className="text-slate-600 text-sm md:text-base leading-relaxed">
-                {step.description}
-              </p>
+                  {/* Text Content */}
+                  <div className="pt-2 pb-6">
+                    <h4 className="text-xl md:text-2xl font-bold text-slate-900 mb-3">
+                      {step.title}
+                    </h4>
+                    <p className="text-slate-600 text-base md:text-lg leading-relaxed">
+                      {step.description}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
             </motion.div>
-          ))}
+          </div>
+
+          {/* Left Column: Heading */}
+          <div className="order-1 lg:order-1 lg:sticky lg:top-40 self-start">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="mb-12 lg:mb-0 text-center lg:text-left bg-white border border-slate-300 rounded-[2rem] p-8 md:p-12"
+            >
+              <Badge className="bg-slate-900 text-white hover:bg-slate-800 border-none mb-6 px-4 py-1.5 text-xs font-semibold tracking-wider rounded-full">
+                <span className="w-2 h-2 rounded-full bg-amber-500 mr-2"></span>
+                Our Strategy
+              </Badge>
+              <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                The 4-Step Growth Blueprint
+              </h2>
+            </motion.div>
+          </div>
+
         </div>
       </div>
     </section>

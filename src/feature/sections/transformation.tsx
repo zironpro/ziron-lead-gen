@@ -5,7 +5,7 @@ import { Badge } from"@/components/ui/badge";
 
 export function Transformation() {
  return (
- <section className="bg-slate-50 pt-24 md:pt-32 pb-12 relative">
+ <section className="pt-8 md:pt-12 pb-12 relative">
  <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[1200px]">
  {/* Header */}
  <motion.div 
@@ -15,10 +15,11 @@ export function Transformation() {
  transition={{ duration: 0.6 }}
  className="flex flex-col items-center justify-center mb-16 text-center"
  >
- <Badge variant="outline"className="text-amber-600 border-amber-200 bg-amber-50 mb-6 px-4 py-1 text-sm font-semibold tracking-wider">
+ <Badge className="bg-slate-900 text-white hover:bg-slate-800 border-none mb-6 px-4 py-1.5 text-xs font-semibold tracking-wider rounded-full">
+ <span className="w-2 h-2 rounded-full bg-amber-500 mr-2"></span>
  Before & After
  </Badge>
- <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight">
+ <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
  See The Transformation
  </h2>
  </motion.div>
@@ -29,7 +30,7 @@ export function Transformation() {
  whileInView={{ opacity: 1, y: 0 }}
  viewport={{ once: true }}
  transition={{ duration: 0.8 }}
- className="bg-white rounded-[2.5rem] shadow-xl shadow-slate-200/50 border border-slate-100 p-8 md:p-16 relative flex flex-col md:flex-row items-center justify-between gap-12 md:gap-8"
+ className="bg-white rounded-2xl border border-slate-200 p-8 md:p-16 relative flex flex-col md:flex-row items-center justify-between gap-12 md:gap-8"
  >
  
  {/* Before Column */}

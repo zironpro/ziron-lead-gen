@@ -10,22 +10,34 @@ export function Challenge() {
     {
       icon: <Users className="w-6 h-6 text-amber-600" />,
       title: "Low Engagement",
-      description: "Very low likes, comments & reach, making the brand feel stagnant."
+      description: "Very low likes, comments & reach, making the brand feel stagnant.",
+      bgClass: "bg-amber-50/50 hover:bg-amber-50",
+      borderClass: "hover:border-amber-200",
+      iconBgClass: "group-hover:bg-amber-100"
     },
     {
       icon: <FileX className="w-6 h-6 text-rose-500" />,
       title: "No Quality Leads",
-      description: "Zero inquiries or property requests from their social presence."
+      description: "Zero inquiries or property requests from their social presence.",
+      bgClass: "bg-rose-50/50 hover:bg-rose-50",
+      borderClass: "hover:border-rose-200",
+      iconBgClass: "group-hover:bg-rose-100"
     },
     {
-      icon: <CalendarMinus className="w-6 h-6 text-amber-500" />,
+      icon: <CalendarMinus className="w-6 h-6 text-blue-500" />,
       title: "Inconsistent Posting",
-      description: "Random posting with no clear strategy or visual identity."
+      description: "Random posting with no clear strategy or visual identity.",
+      bgClass: "bg-blue-50/50 hover:bg-blue-50",
+      borderClass: "hover:border-blue-200",
+      iconBgClass: "group-hover:bg-blue-100"
     },
     {
       icon: <Target className="w-6 h-6 text-emerald-500" />,
       title: "Competitors Ahead",
-      description: "Competitors were capturing all the high-value real estate leads."
+      description: "Competitors were capturing all the high-value real estate leads.",
+      bgClass: "bg-emerald-50/50 hover:bg-emerald-50",
+      borderClass: "hover:border-emerald-200",
+      iconBgClass: "group-hover:bg-emerald-100"
     }
   ];
 
@@ -45,7 +57,7 @@ export function Challenge() {
   };
 
   return (
-    <section className="bg-white py-24 md:py-32 relative border-b border-slate-100">
+    <section className="py-16 md:py-24 relative border-b border-slate-100">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[1200px]">
         
         {/* Header */}
@@ -56,7 +68,8 @@ export function Challenge() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto mb-20"
         >
-          <Badge variant="outline" className="text-amber-600 border-amber-200 bg-amber-50 mb-6 px-4 py-1 text-sm font-semibold tracking-wider">
+          <Badge className="bg-slate-900 text-white hover:bg-slate-800 border-none mb-6 px-4 py-1.5 text-xs font-semibold tracking-wider rounded-full">
+            <span className="w-2 h-2 rounded-full bg-amber-500 mr-2"></span>
             Before Working With Us
           </Badge>
           <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
@@ -77,9 +90,9 @@ export function Challenge() {
         >
           {items.map((item, index) => (
             <motion.div key={index} variants={itemVariants} className="h-full">
-              <Card className="h-full bg-slate-50/50 border border-slate-200 shadow-sm hover:shadow-xl hover:border-amber-200 transition-all duration-300 hover:-translate-y-2 group cursor-default">
+              <Card className={`h-full border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group cursor-default ${item.bgClass} ${item.borderClass}`}>
                 <CardHeader className="pb-4">
-                  <div className="w-14 h-14 rounded-xl bg-white border border-slate-100 shadow-sm flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-amber-50 transition-all duration-300">
+                  <div className={`w-14 h-14 rounded-xl bg-white border border-slate-100 shadow-sm flex items-center justify-center mb-4 group-hover:scale-110 transition-all duration-300 ${item.iconBgClass}`}>
                     {item.icon}
                   </div>
                   <CardTitle className="text-xl font-bold text-slate-900">

@@ -34,7 +34,7 @@ function Counter({ target, duration = 2000 }: { target: number, duration?: numbe
 
 export function Hero() {
   return (
-    <section className="relative bg-slate-50 text-slate-900 py-20 md:py-32 overflow-hidden">
+    <section className="relative text-slate-900 py-16 md:py-24 overflow-hidden">
       {/* Background decoration */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
         <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[50%] rounded-full bg-amber-100/50 blur-3xl" />

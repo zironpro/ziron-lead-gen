@@ -1,23 +1,32 @@
 "use client";
 
-import { Gift, CheckCircle2, ArrowRight } from "lucide-react";
+import { 
+  Image as ImageIcon, 
+  Smartphone, 
+  Video, 
+  Palette, 
+  Calendar, 
+  Users, 
+  BarChart3,
+  ArrowRight
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { motion } from "motion/react";
 
 export function Package() {
   const features = [
-    "12 Social Media Posts",
-    "8 Stories",
-    "4 Reels",
-    "Graphic Design",
-    "Content Calendar",
-    "Posting & Account Management",
-    "Monthly Performance Report"
+    { text: "12 Social Media Posts", icon: ImageIcon },
+    { text: "8 Stories", icon: Smartphone },
+    { text: "4 Reels", icon: Video },
+    { text: "Graphic Design", icon: Palette },
+    { text: "Content Calendar", icon: Calendar },
+    { text: "Posting & Account Management", icon: Users },
+    { text: "Monthly Performance Report", icon: BarChart3 }
   ];
 
   return (
-    <section className="bg-white py-24 md:py-32 relative">
+    <section className="pt-16 md:pt-24 pb-8 md:pb-12 relative border-b border-slate-100">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
         
         {/* Header */}
@@ -28,10 +37,11 @@ export function Package() {
           transition={{ duration: 0.6 }}
           className="flex flex-col items-center justify-center mb-16 text-center"
         >
-          <Badge variant="outline" className="text-amber-600 border-amber-200 bg-amber-50 mb-6 px-4 py-1 text-sm font-semibold tracking-wider">
+          <Badge className="bg-slate-900 text-white hover:bg-slate-800 border-none mb-6 px-4 py-1.5 text-xs font-semibold tracking-wider rounded-full">
+            <span className="w-2 h-2 rounded-full bg-amber-500 mr-2"></span>
             What's Included
           </Badge>
-          <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
             Transparent Pricing.<br /> Unlimited Value.
           </h2>
         </motion.div>
@@ -42,61 +52,59 @@ export function Package() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="flex flex-col lg:flex-row items-center lg:items-stretch justify-center bg-white border border-slate-200 shadow-2xl shadow-slate-200/50 rounded-3xl overflow-hidden relative"
+          className="flex justify-center"
         >
-          {/* Subtle background glow */}
-          <div className="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 bg-amber-50 rounded-full blur-3xl opacity-50 z-0"></div>
-
-          {/* Left Column: Info & Price */}
-          <div className="flex flex-col items-center lg:items-start w-full lg:w-1/2 p-8 md:p-12 lg:p-16 bg-slate-50 relative z-10 border-b lg:border-b-0 lg:border-r border-slate-200">
-            {/* Gift Icon */}
-            <div className="w-16 h-16 rounded-2xl bg-amber-100 flex items-center justify-center mb-8 shadow-sm text-amber-600">
-              <Gift className="w-8 h-8" />
+          <div className="w-full max-w-[440px] bg-white rounded-2xl border border-slate-200 hover:border-amber-200 transition-colors duration-300 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)] overflow-hidden relative">
+            
+            {/* Gradient background layers */}
+            <div className="absolute top-0 left-0 right-0 h-[400px] overflow-hidden pointer-events-none z-0 rounded-t-2xl">
+              {/* Top blue hint */}
+              <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-full h-[200px] bg-blue-100/60 blur-[60px]" />
+              {/* Sunset orange/yellow band behind button */}
+              <div className="absolute top-[160px] -left-20 -right-20 h-[140px] bg-gradient-to-r from-orange-200/80 via-amber-200/80 to-orange-200/80 blur-[45px]" />
             </div>
-            
-            {/* Title */}
-            <h3 className="text-2xl md:text-3xl font-extrabold text-slate-900 mb-4 tracking-tight text-center lg:text-left">
-              Social Media<br className="hidden md:block"/> Management
-            </h3>
-            
-            {/* Price */}
-            <p className="text-slate-500 font-medium mb-2">Starting From</p>
-            <div className="flex flex-col items-center lg:items-start justify-center mb-10 w-full">
-              <span className="text-slate-400 text-lg font-semibold line-through mb-1 decoration-slate-300 decoration-2">
-                AED 6,500
-              </span>
-              <div className="flex items-baseline justify-center lg:justify-start gap-1">
-                <span className="text-5xl md:text-6xl font-black text-amber-600 tracking-tight">AED 2,500</span>
-                <span className="text-slate-500 font-semibold ml-2">/ month</span>
+
+            <div className="relative z-10 p-8 sm:p-10">
+              {/* Title */}
+              <h3 className="text-[26px] font-bold text-slate-900 mb-6 tracking-tight">
+                Social Media Management
+              </h3>
+              
+              {/* Price */}
+              <div className="flex flex-col mb-10">
+                <span className="text-slate-400 text-sm font-semibold line-through mb-1 decoration-2">
+                  AED 6,500
+                </span>
+                <div className="flex items-center gap-3">
+                  <span className="text-[44px] leading-none font-extrabold text-slate-900 tracking-tight">
+                    AED 2,500
+                  </span>
+                  <div className="flex flex-col text-slate-500 text-[13px] font-medium leading-[1.3]">
+                    <span>per month</span>
+                    <span>starting from</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Button */}
+              <Button className="w-full bg-[#1c1c1c] hover:bg-black text-white rounded-[1.25rem] h-14 text-[15px] font-semibold mb-10 shadow-lg shadow-black/5 transition-all">
+                View All Packages
+              </Button>
+
+              {/* Features List */}
+              <div className="flex flex-col gap-[18px]">
+                {features.map((feature, index) => {
+                  const Icon = feature.icon;
+                  return (
+                    <div key={index} className="flex items-center gap-4 text-slate-700">
+                      <Icon className="w-[22px] h-[22px] text-slate-500 stroke-[1.5]" />
+                      <span className="font-medium text-[15px] tracking-tight">{feature.text}</span>
+                    </div>
+                  );
+                })}
               </div>
             </div>
-
-            {/* Button (Desktop only here, mobile at bottom) */}
-            <Button className="hidden lg:flex bg-amber-600 hover:bg-amber-700 text-white px-8 h-14 rounded-full font-bold text-base gap-2 w-full mt-auto transition-all shadow-lg shadow-amber-600/20 group">
-              View All Packages 
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
           </div>
-
-          {/* Right Column: Features List */}
-          <div className="w-full lg:w-1/2 flex flex-col p-8 md:p-12 lg:p-16 relative z-10 bg-white">
-            <h4 className="text-xl font-bold text-slate-900 mb-8 border-b border-slate-100 pb-4">Everything you need to grow</h4>
-            <div className="w-full flex flex-col gap-5 mb-12 lg:mb-0">
-              {features.map((feature, index) => (
-                <div key={index} className="flex items-start gap-4">
-                  <CheckCircle2 className="w-6 h-6 text-emerald-500 shrink-0" />
-                  <span className="text-slate-700 font-medium">{feature}</span>
-                </div>
-              ))}
-            </div>
-            
-            {/* Button (Mobile only here) */}
-            <Button className="lg:hidden bg-amber-600 hover:bg-amber-700 text-white px-8 h-14 rounded-full font-bold text-base gap-2 w-full mt-auto transition-all shadow-lg shadow-amber-600/20 group">
-              View All Packages 
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
-          </div>
-
         </motion.div>
         
       </div>

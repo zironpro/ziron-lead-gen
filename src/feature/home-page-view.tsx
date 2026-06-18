@@ -6,6 +6,7 @@ import { Results } from "./sections/results";
 import { Transformation } from "./sections/transformation";
 import { Package } from "./sections/package";
 import { WeAchieved } from "./sections/we-achieved";
+import { CTC } from "./sections/cta";
 
 export function HomePageView() {
   return (
@@ -18,6 +19,7 @@ export function HomePageView() {
       <Package />
       <Transformation />
       <WeAchieved />
+      <CTC />
     </main>
   );
 }
