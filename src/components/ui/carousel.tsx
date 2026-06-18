@@ -13,7 +13,10 @@ import { motion, type Transition } from "motion/react";
 
 import { Button } from "@/components/ui/button";
 
-import { ChevronLeft as IconCaretLeft, ChevronRight as IconCaretRight } from "lucide-react";
+import {
+	ChevronLeft as IconCaretLeft,
+	ChevronRight as IconCaretRight,
+} from "lucide-react";
 
 import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
 import { cn } from "@/lib/utils";
@@ -168,13 +171,13 @@ function Carousel({
 						}),
 					]
 				: runAutoplay
-				? [
-						Autoplay({
-							delay: autoplayOptions.delay,
-							...autoplayOptions,
-						}),
-					]
-				: []),
+					? [
+							Autoplay({
+								delay: autoplayOptions.delay,
+								...autoplayOptions,
+							}),
+						]
+					: []),
 			WheelGesturesPlugin(),
 			...(plugins || []),
 		]

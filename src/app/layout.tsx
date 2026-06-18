@@ -8,35 +8,32 @@ import { NextSectionButton } from "@/components/layout/next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Best AI Marketing Agency in Abu Dhab",
-  description: "Result-driven social media strategy & lead generation.",
+	title: "Best AI Marketing Agency in Abu Dhab",
+	description: "Result-driven social media strategy & lead generation.",
 };
 
 export default function RootLayout({
-  children,
+	children,
 }: Readonly<{
-  children: React.ReactNode;
+	children: React.ReactNode;
 }>) {
-  return (
-    <html
-      lang="en"
-      className="h-full"
-    >
-      <body
-        className={cn(
-          "min-h-full flex flex-col font-sans text-gray-900 bg-stone-100 m-0 p-0 overflow-x-hidden w-full",
-          "antialiased",
-          clash.variable,
-          inter.className,
-          mono.variable
-        )}
-      >
-        <Navbar />
-        {children}
-        <Footer />
-        <WhatsAppButton />
-        <NextSectionButton />
-      </body>
-    </html>
-  );
+	return (
+		<html lang="en" className="h-full">
+			<body
+				className={cn(
+					"min-h-full flex flex-col font-sans text-gray-900 bg-stone-100 m-0 p-0 overflow-x-hidden w-full",
+					"antialiased",
+					clash.variable,
+					inter.className,
+					mono.variable
+				)}
+			>
+				<Navbar />
+				{children}
+				<Footer />
+				<WhatsAppButton />
+				<NextSectionButton />
+			</body>
+		</html>
+	);
 }

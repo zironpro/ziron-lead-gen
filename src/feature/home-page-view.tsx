@@ -9,17 +9,17 @@ import { WeAchieved } from "./sections/we-achieved";
 import { CTC } from "./sections/cta";
 
 export function HomePageView() {
-  return (
-    <main className="min-h-screen selection:bg-amber-100 selection:text-amber-900 font-sans">
-      <Hero />
-      <Clients />
-      <Challenge />
-      <Strategy />
-      <Results />
-      <Package />
-      <Transformation />
-      <WeAchieved />
-      <CTC />
-    </main>
-  );
+	return (
+		<main className="min-h-screen selection:bg-amber-100 selection:text-amber-900 font-sans">
+			<Hero />
+			<Clients />
+			<Challenge />
+			<Strategy />
+			<Results />
+			<Package />
+			<Transformation />
+			<WeAchieved />
+			<CTC />
+		</main>
+	);
 }
