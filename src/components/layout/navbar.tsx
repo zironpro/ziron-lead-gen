@@ -38,6 +38,12 @@ export function Navbar() {
 				<Link
 					className="flex flex-shrink-0 items-center transition-opacity hover:opacity-80"
 					href="/"
+					onClick={(e) => {
+						if (window.location.pathname === "/") {
+							e.preventDefault();
+							window.scrollTo({ top: 0, behavior: "smooth" });
+						}
+					}}
 				>
 					<Image
 						alt="Ziron Pro Logo"

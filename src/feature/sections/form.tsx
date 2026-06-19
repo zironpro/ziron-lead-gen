@@ -103,7 +103,7 @@ export function FormSection() {
 										<Input
 											className="h-14 rounded-xl border-slate-700 bg-slate-800/50 pl-11 text-base text-white shadow-sm placeholder:text-slate-500 focus-visible:border-amber-500 focus-visible:ring-amber-500"
 											id="phone"
-											placeholder="+971 50 123 4567"
+											placeholder="+971 56 664 6539"
 											type="tel"
 										/>
 									</div>

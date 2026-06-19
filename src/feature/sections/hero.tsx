@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 import Link from "next/link";
 
-import { ArrowRight, TrendingUp } from "lucide-react";
+import { ArrowRight, MessageCircle, Phone, TrendingUp } from "lucide-react";
 import { motion } from "motion/react";
 
 import { Button } from "@/components/ui/button";
@@ -106,6 +106,33 @@ export function Hero() {
 								variant="outline"
 							>
 								View All Packages
+							</Button>
+						</div>
+
+						{/* Contact Buttons */}
+						<div className="flex w-full flex-row items-center justify-start gap-3 pt-2 sm:gap-4">
+							<Button
+								className="h-14 flex-1 rounded-lg border-slate-200 bg-white px-2 font-bold text-base text-slate-700 shadow-sm transition-all hover:bg-slate-50 hover:text-slate-900 sm:w-auto sm:flex-none sm:px-8 sm:text-lg"
+								nativeButton={false}
+								render={<Link href="tel:+971542588446" />}
+								variant="outline"
+							>
+								<Phone className="mr-1.5 h-4 w-4 sm:mr-2 sm:h-5 sm:w-5" />
+								Call
+							</Button>
+							<Button
+								className="h-14 flex-1 rounded-lg bg-amber-500 px-2 font-bold text-base text-white shadow-amber-500/20 shadow-lg transition-all hover:bg-amber-600 sm:w-auto sm:flex-none sm:px-8 sm:text-lg"
+								nativeButton={false}
+								render={
+									<Link
+										href="https://wa.me/971542588446"
+										rel="noopener noreferrer"
+										target="_blank"
+									/>
+								}
+							>
+								<MessageCircle className="mr-1.5 h-4 w-4 sm:mr-2 sm:h-5 sm:w-5" />
+								WhatsApp
 							</Button>
 						</div>
 					</motion.div>

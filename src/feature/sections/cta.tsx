@@ -1,7 +1,7 @@
 "use client";
 
 // Inline SVGs for Socials
-const FacebookIcon = (props: React.SVGProps<SVGSVGElement>) => (
+const _FacebookIcon = (props: React.SVGProps<SVGSVGElement>) => (
 	<svg
 		fill="none"
 		stroke="currentColor"
@@ -82,25 +82,23 @@ export function CTC() {
 					<div className="flex gap-4">
 						<a
 							className="flex h-14 w-14 items-center justify-center rounded-lg bg-black/40 transition-all hover:scale-105 hover:bg-black"
-							href="#"
+							href="https://www.linkedin.com/company/zironpro/"
+							rel="noopener noreferrer"
+							target="_blank"
 						>
 							<LinkedinIcon className="h-6 w-6 text-white" />
 						</a>
 						<a
 							className="flex h-14 w-14 items-center justify-center rounded-lg bg-black/40 transition-all hover:scale-105 hover:bg-black"
-							href="#"
+							href="https://www.instagram.com/ziron_pro/"
+							rel="noopener noreferrer"
+							target="_blank"
 						>
 							<InstagramIcon className="h-6 w-6 text-white" />
 						</a>
 						<a
 							className="flex h-14 w-14 items-center justify-center rounded-lg bg-black/40 transition-all hover:scale-105 hover:bg-black"
-							href="#"
-						>
-							<FacebookIcon className="h-6 w-6 text-white" />
-						</a>
-						<a
-							className="flex h-14 w-14 items-center justify-center rounded-lg bg-black/40 transition-all hover:scale-105 hover:bg-black"
-							href="https://wa.me/971566646539"
+							href="https://wa.me/971542588446"
 							rel="noopener noreferrer"
 							target="_blank"
 						>
