@@ -12,7 +12,7 @@ import { cn } from "@/lib/utils";
 import "./globals.css";
 
 export const metadata: Metadata = {
-	title: "Best AI Marketing Agency in Abu Dhab",
+	title: "Best Digital Marketing Agency in UAE",
 	description: "Result-driven social media strategy & lead generation.",
 };
 
