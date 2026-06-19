@@ -11,7 +11,6 @@ export function FormSection() {
 	return (
 		<section
 			className="relative overflow-hidden bg-white py-20 md:py-32"
-			id="contact"
 		>
 			{/* Background accents */}
 			<div className="pointer-events-none absolute top-0 right-0 -mt-20 -mr-20 h-72 w-72 rounded-full bg-amber-500/10 blur-3xl" />
@@ -43,6 +42,8 @@ export function FormSection() {
 
 					{/* Form Card */}
 					<motion.div
+						className="scroll-mt-24 md:scroll-mt-32"
+						id="contact"
 						initial={{ opacity: 0, y: 30 }}
 						transition={{ duration: 0.6, delay: 0.2 }}
 						viewport={{ once: true }}
