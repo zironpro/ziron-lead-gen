@@ -2,6 +2,7 @@ import { Clients } from "./sections/clients";
 import { CTC } from "./sections/cta";
 import { FormSection } from "./sections/form";
 import { Hero } from "./sections/hero";
+import { MetaAds } from "./sections/meta-ads";
 import { Package } from "./sections/package";
 import { Results } from "./sections/results";
 import { Transformation } from "./sections/transformation";
@@ -15,6 +16,7 @@ export function HomePageView() {
 			{/* <Strategy /> */}
 			<Results />
 			<Package />
+			<MetaAds />
 			<Transformation />
 			{/* <WeAchieved /> */}
 			<FormSection />
