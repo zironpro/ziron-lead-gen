@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 import Link from "next/link";
 
-import { ArrowRight, Phone, TrendingUp } from "lucide-react";
+import { ArrowRight, TrendingUp } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 
@@ -94,6 +94,7 @@ export function Hero() {
 									Get Your Free Audit
 									<ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
 								</Button>
+								{/* 
 								<Button
 									className="h-14 w-full rounded-lg border-slate-200 bg-white px-8 font-bold text-lg text-slate-700 shadow-sm transition-all hover:bg-slate-50 hover:text-slate-900 sm:w-auto"
 									nativeButton={false}
@@ -107,10 +108,27 @@ export function Hero() {
 									variant="outline"
 								>
 									View All Packages
+								</Button> 
+								*/}
+								<Button
+									className="h-14 w-full rounded-lg border-transparent bg-[#25D366] px-8 font-bold text-lg text-white shadow-sm transition-all hover:bg-[#20bd5a] hover:text-white sm:w-auto"
+									nativeButton={false}
+									render={
+										<Link
+											href="https://wa.me/971566646539"
+											rel="noopener noreferrer"
+											target="_blank"
+										/>
+									}
+									variant="outline"
+								>
+									<WhatsAppIcon className="mr-3 h-10 w-10 text-white sm:mr-4 sm:h-12 sm:w-12" />
+									WhatsApp
 								</Button>
 							</div>
 
 							{/* Contact Buttons */}
+							{/* 
 							<div className="flex w-full flex-row items-center justify-start gap-3 sm:gap-4">
 								<Button
 									className="h-14 flex-1 rounded-lg border-slate-200 bg-white px-2 font-bold text-base text-slate-700 shadow-sm transition-all hover:bg-slate-50 hover:text-slate-900 sm:w-auto sm:flex-none sm:px-8 sm:text-lg"
@@ -135,7 +153,8 @@ export function Hero() {
 									<WhatsAppIcon className="mr-1.5 h-4 w-4 sm:mr-2 sm:h-5 sm:w-5" />
 									WhatsApp
 								</Button>
-							</div>
+							</div> 
+							*/}
 						</div>
 					</div>
 				</div>

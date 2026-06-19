@@ -58,7 +58,7 @@ export function Transformation() {
 								className="h-auto w-full object-cover"
 								height={400}
 								priority
-								src="/image/beforeimg.png"
+								src="/digital-marketing/image/beforeimg.png"
 								width={260}
 							/>
 						</div>
@@ -135,7 +135,7 @@ export function Transformation() {
 								className="h-auto w-full object-cover"
 								height={400}
 								priority
-								src="/image/afterimg.png"
+								src="/digital-marketing/image/afterimg.png"
 								width={260}
 							/>
 						</div>

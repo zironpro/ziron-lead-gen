@@ -1,6 +1,13 @@
 "use client";
 
-import { ArrowRight, Building2, Mail, Phone, User } from "lucide-react";
+import {
+	ArrowRight,
+	AtSign,
+	Building2,
+	Phone,
+	ShieldCheck,
+	User,
+} from "lucide-react";
 import { motion } from "motion/react";
 
 import { Badge } from "@/components/ui/badge";
@@ -9,9 +16,7 @@ import { Input } from "@/components/ui/input";
 
 export function FormSection() {
 	return (
-		<section
-			className="relative overflow-hidden bg-white py-20 md:py-32"
-		>
+		<section className="relative overflow-hidden bg-white py-20 md:py-32">
 			{/* Background accents */}
 			<div className="pointer-events-none absolute top-0 right-0 -mt-20 -mr-20 h-72 w-72 rounded-full bg-amber-500/10 blur-3xl" />
 			<div className="pointer-events-none absolute bottom-0 left-0 -mb-20 -ml-20 h-96 w-96 rounded-full bg-blue-500/5 blur-3xl" />
@@ -20,7 +25,7 @@ export function FormSection() {
 				<div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-20">
 					{/* Text Content */}
 					<motion.div
-						className="flex flex-col text-left"
+						className="flex hidden flex-col text-left lg:flex"
 						initial={{ opacity: 0, x: -30 }}
 						transition={{ duration: 0.6 }}
 						viewport={{ once: true }}
@@ -42,99 +47,81 @@ export function FormSection() {
 
 					{/* Form Card */}
 					<motion.div
-						className="scroll-mt-24 md:scroll-mt-32"
+						className="mx-auto w-full max-w-md scroll-mt-24 md:scroll-mt-32 lg:max-w-none"
 						id="contact"
 						initial={{ opacity: 0, y: 30 }}
 						transition={{ duration: 0.6, delay: 0.2 }}
 						viewport={{ once: true }}
 						whileInView={{ opacity: 1, y: 0 }}
 					>
-						<div className="relative overflow-hidden rounded-3xl border border-slate-800 bg-slate-900 p-8 shadow-2xl shadow-slate-900/20 md:p-10">
+						<div className="relative overflow-hidden rounded-[2rem] border border-slate-800 bg-[#090f1a] p-6 shadow-2xl shadow-slate-900/20 sm:p-8 md:p-10">
+							{/* Form Header matching the screenshot */}
+							<div className="mb-6">
+								<h3 className="font-bold text-white text-xl tracking-wide sm:text-2xl">
+									Get Your Free <br />
+									<span className="text-[#ff6a00]">Social Media Audit</span>
+								</h3>
+								<p className="mt-3 text-slate-300 text-sm sm:text-base">
+									We'll review your social media and create a custom strategy to
+									grow your business.
+								</p>
+							</div>
+
 							<form
-								className="mt-2 flex flex-col gap-6"
+								className="mt-2 flex flex-col gap-4"
 								onSubmit={(e) => e.preventDefault()}
 							>
 								{/* Name */}
-								<div className="flex flex-col gap-2.5">
-									<label
-										className="ml-1 font-bold text-slate-200 text-sm"
-										htmlFor="name"
-									>
-										Full Name
-									</label>
-									<div className="relative">
-										<User className="absolute top-1/2 left-3.5 h-5 w-5 -translate-y-1/2 text-slate-400" />
-										<Input
-											className="h-14 rounded-xl border-slate-700 bg-slate-800/50 pl-11 text-base text-white shadow-sm placeholder:text-slate-500 focus-visible:border-amber-500 focus-visible:ring-amber-500"
-											id="name"
-											placeholder="John Doe"
-										/>
-									</div>
+								<div className="relative">
+									<User className="absolute top-1/2 left-3.5 h-5 w-5 -translate-y-1/2 text-slate-400" />
+									<Input
+										className="h-12 rounded-xl border-none bg-white pl-11 text-base text-slate-900 shadow-sm placeholder:text-slate-400 focus-visible:ring-2 focus-visible:ring-[#ff6a00] sm:h-14"
+										id="name"
+										placeholder="Full Name"
+									/>
 								</div>
 
-								{/* Email */}
-								<div className="flex flex-col gap-2.5">
-									<label
-										className="ml-1 font-bold text-slate-200 text-sm"
-										htmlFor="email"
-									>
-										Email Address
-									</label>
-									<div className="relative">
-										<Mail className="absolute top-1/2 left-3.5 h-5 w-5 -translate-y-1/2 text-slate-400" />
-										<Input
-											className="h-14 rounded-xl border-slate-700 bg-slate-800/50 pl-11 text-base text-white shadow-sm placeholder:text-slate-500 focus-visible:border-amber-500 focus-visible:ring-amber-500"
-											id="email"
-											placeholder="john@company.com"
-											type="email"
-										/>
-									</div>
+								{/* Company */}
+								<div className="relative">
+									<Building2 className="absolute top-1/2 left-3.5 h-5 w-5 -translate-y-1/2 text-slate-400" />
+									<Input
+										className="h-12 rounded-xl border-none bg-white pl-11 text-base text-slate-900 shadow-sm placeholder:text-slate-400 focus-visible:ring-2 focus-visible:ring-[#ff6a00] sm:h-14"
+										id="company"
+										placeholder="Company Name"
+									/>
 								</div>
 
-								{/* Phone Number */}
-								<div className="flex flex-col gap-2.5">
-									<label
-										className="ml-1 font-bold text-slate-200 text-sm"
-										htmlFor="phone"
-									>
-										Phone Number
-									</label>
-									<div className="relative">
-										<Phone className="absolute top-1/2 left-3.5 h-5 w-5 -translate-y-1/2 text-slate-400" />
-										<Input
-											className="h-14 rounded-xl border-slate-700 bg-slate-800/50 pl-11 text-base text-white shadow-sm placeholder:text-slate-500 focus-visible:border-amber-500 focus-visible:ring-amber-500"
-											id="phone"
-											placeholder="+971 56 664 6539"
-											type="tel"
-										/>
-									</div>
+								{/* Phone */}
+								<div className="relative">
+									<Phone className="absolute top-1/2 left-3.5 h-5 w-5 -translate-y-1/2 text-slate-400" />
+									<Input
+										className="h-12 rounded-xl border-none bg-white pl-11 text-base text-slate-900 shadow-sm placeholder:text-slate-400 focus-visible:ring-2 focus-visible:ring-[#ff6a00] sm:h-14"
+										id="phone"
+										placeholder="WhatsApp Number"
+										type="tel"
+									/>
 								</div>
 
-								{/* Company Name */}
-								<div className="flex flex-col gap-2.5">
-									<label
-										className="ml-1 font-bold text-slate-200 text-sm"
-										htmlFor="company"
-									>
-										Company Name
-									</label>
-									<div className="relative">
-										<Building2 className="absolute top-1/2 left-3.5 h-5 w-5 -translate-y-1/2 text-slate-400" />
-										<Input
-											className="h-14 rounded-xl border-slate-700 bg-slate-800/50 pl-11 text-base text-white shadow-sm placeholder:text-slate-500 focus-visible:border-amber-500 focus-visible:ring-amber-500"
-											id="company"
-											placeholder="Your Company LLC"
-										/>
-									</div>
+								{/* Website / Instagram */}
+								<div className="relative">
+									<AtSign className="absolute top-1/2 left-3.5 h-5 w-5 -translate-y-1/2 text-slate-400" />
+									<Input
+										className="h-12 rounded-xl border-none bg-white pl-11 text-base text-slate-900 shadow-sm placeholder:text-slate-400 focus-visible:ring-2 focus-visible:ring-[#ff6a00] sm:h-14"
+										id="website"
+										placeholder="Website / Instagram Link"
+									/>
 								</div>
 
-								<Button className="group mt-4 h-14 w-full rounded-xl bg-amber-500 font-bold text-lg text-white shadow-amber-500/25 shadow-lg transition-all hover:bg-amber-600">
+								<Button className="group mt-2 h-12 w-full rounded-xl bg-[#ff6a00] font-bold text-lg text-white shadow-[#ff6a00]/25 shadow-lg transition-all hover:bg-[#e65f00] sm:h-14">
 									Get My Free Audit
 									<ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
 								</Button>
-								<p className="mt-2 text-center font-medium text-slate-500 text-sm">
-									We respect your privacy. No spam ever.
-								</p>
+								<div className="mt-3 flex items-center justify-center gap-1.5 text-slate-300">
+									<ShieldCheck className="h-4 w-4" />
+									<p className="font-medium text-xs sm:text-sm">
+										We respect your privacy. No spam ever.
+									</p>
+								</div>
 							</form>
 						</div>
 					</motion.div>
