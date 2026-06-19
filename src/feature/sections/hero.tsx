@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 
 import { ArrowRight, Phone, TrendingUp } from "lucide-react";
-import { motion } from "motion/react";
 
 import { Button } from "@/components/ui/button";
 
@@ -58,12 +57,7 @@ export function Hero() {
 			<div className="container relative z-10 mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8">
 				<div className="flex max-w-3xl flex-col items-start justify-center text-left">
 					{/* Text Content */}
-					<motion.div
-						animate={{ opacity: 1, y: 0 }}
-						className="flex w-full flex-col items-start space-y-8"
-						initial={{ opacity: 0, y: 20 }}
-						transition={{ duration: 0.6 }}
-					>
+					<div className="flex w-full animate-hero-fade-in flex-col items-start space-y-8">
 						<div className="inline-flex items-center gap-2 rounded-lg border border-amber-200 bg-amber-100 px-4 py-1.5 font-bold text-amber-700 text-sm tracking-wide">
 							<TrendingUp className="h-4 w-4" />
 							<span>Proven Digital Marketing in UAE</span>
@@ -83,65 +77,67 @@ export function Hero() {
 							media and paid campaigns scale businesses.
 						</p>
 
-						{/* Call to Action Buttons */}
-						<div className="flex w-full flex-col items-center justify-start gap-4 pt-4 sm:flex-row">
-							<Button
-								className="group h-14 w-full rounded-lg bg-amber-500 px-8 font-bold text-lg text-white shadow-amber-500/20 shadow-lg transition-all hover:bg-amber-600 sm:w-auto"
-								nativeButton={false}
-								onClick={(e) => {
-									e.preventDefault();
-									document
-										.getElementById("contact")
-										?.scrollIntoView({ behavior: "smooth" });
-								}}
-								render={<Link href="#contact" />}
-							>
-								Get Your Free Audit
-								<ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-							</Button>
-							<Button
-								className="h-14 w-full rounded-lg border-slate-200 bg-white px-8 font-bold text-lg text-slate-700 shadow-sm transition-all hover:bg-slate-50 hover:text-slate-900 sm:w-auto"
-								nativeButton={false}
-								onClick={(e) => {
-									e.preventDefault();
-									document
-										.getElementById("pricing")
-										?.scrollIntoView({ behavior: "smooth" });
-								}}
-								render={<Link href="#pricing" />}
-								variant="outline"
-							>
-								View All Packages
-							</Button>
-						</div>
+						<div className="flex w-full flex-col gap-4">
+							{/* Call to Action Buttons */}
+							<div className="flex w-full flex-col items-center justify-start gap-4 pt-4 sm:flex-row">
+								<Button
+									className="group h-14 w-full rounded-lg bg-amber-500 px-8 font-bold text-lg text-white shadow-amber-500/20 shadow-lg transition-all hover:bg-amber-600 sm:w-auto"
+									nativeButton={false}
+									onClick={(e) => {
+										e.preventDefault();
+										document
+											.getElementById("contact")
+											?.scrollIntoView({ behavior: "smooth" });
+									}}
+									render={<Link href="#contact" />}
+								>
+									Get Your Free Audit
+									<ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+								</Button>
+								<Button
+									className="h-14 w-full rounded-lg border-slate-200 bg-white px-8 font-bold text-lg text-slate-700 shadow-sm transition-all hover:bg-slate-50 hover:text-slate-900 sm:w-auto"
+									nativeButton={false}
+									onClick={(e) => {
+										e.preventDefault();
+										document
+											.getElementById("pricing")
+											?.scrollIntoView({ behavior: "smooth" });
+									}}
+									render={<Link href="#pricing" />}
+									variant="outline"
+								>
+									View All Packages
+								</Button>
+							</div>
 
-						{/* Contact Buttons */}
-						<div className="flex w-full flex-row items-center justify-start gap-3 pt-2 sm:gap-4">
-							<Button
-								className="h-14 flex-1 rounded-lg border-slate-200 bg-white px-2 font-bold text-base text-slate-700 shadow-sm transition-all hover:bg-slate-50 hover:text-slate-900 sm:w-auto sm:flex-none sm:px-8 sm:text-lg"
-								nativeButton={false}
-								render={<Link href="tel:+971542588446" />}
-								variant="outline"
-							>
-								<Phone className="mr-1.5 h-4 w-4 sm:mr-2 sm:h-5 sm:w-5" />
-								Call
-							</Button>
-							<Button
-								className="h-14 flex-1 rounded-lg bg-[#25D366] px-2 font-bold text-base text-white shadow-[#25D366]/20 shadow-lg transition-all hover:bg-[#20bd5a] sm:w-auto sm:flex-none sm:px-8 sm:text-lg"
-								nativeButton={false}
-								render={
-									<Link
-										href="https://wa.me/971566646539"
-										rel="noopener noreferrer"
-										target="_blank"
-									/>
-								}
-							>
-								<WhatsAppIcon className="mr-1.5 h-4 w-4 sm:mr-2 sm:h-5 sm:w-5" />
-								WhatsApp
-							</Button>
+							{/* Contact Buttons */}
+							<div className="flex w-full flex-row items-center justify-start gap-3 sm:gap-4">
+								<Button
+									className="h-14 flex-1 rounded-lg border-slate-200 bg-white px-2 font-bold text-base text-slate-700 shadow-sm transition-all hover:bg-slate-50 hover:text-slate-900 sm:w-auto sm:flex-none sm:px-8 sm:text-lg"
+									nativeButton={false}
+									render={<Link href="tel:+971542588446" />}
+									variant="outline"
+								>
+									<Phone className="mr-1.5 h-4 w-4 sm:mr-2 sm:h-5 sm:w-5" />
+									Call
+								</Button>
+								<Button
+									className="h-14 flex-1 rounded-lg bg-[#25D366] px-2 font-bold text-base text-white shadow-[#25D366]/20 shadow-lg transition-all hover:bg-[#20bd5a] sm:w-auto sm:flex-none sm:px-8 sm:text-lg"
+									nativeButton={false}
+									render={
+										<Link
+											href="https://wa.me/971566646539"
+											rel="noopener noreferrer"
+											target="_blank"
+										/>
+									}
+								>
+									<WhatsAppIcon className="mr-1.5 h-4 w-4 sm:mr-2 sm:h-5 sm:w-5" />
+									WhatsApp
+								</Button>
+							</div>
 						</div>
-					</motion.div>
+					</div>
 				</div>
 			</div>
 		</section>

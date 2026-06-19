@@ -33,7 +33,9 @@ export default function RootLayout({
 				)}
 			>
 				<Navbar />
-				{children}
+				<main className="relative flex w-full flex-1 flex-col overflow-x-hidden">
+					{children}
+				</main>
 				<Footer />
 				<WhatsAppButton />
 				<NextSectionButton />
