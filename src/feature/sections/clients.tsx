@@ -12,16 +12,16 @@ import {
 
 export function Clients() {
 	const clientLogos = [
-		{ name: "100 Power", src: "/assets/clients/100-power.png" },
-		{ name: "Direct LS", src: "/assets/clients/direct-ls.svg" },
-		{ name: "M2Mtek", src: "/assets/clients/m2mtek.png" },
-		{ name: "Maxline", src: "/assets/clients/maxline.png" },
-		{ name: "MC", src: "/assets/clients/mc.svg" },
-		{ name: "Piptan", src: "/assets/clients/piptan.png" },
-		{ name: "Qordz", src: "/assets/clients/qordz.svg" },
-		{ name: "Simply KF", src: "/assets/clients/simply-kf.png" },
-		{ name: "Smart Kitchen", src: "/assets/clients/smart-kitchen.png" },
-		{ name: "Sphere IT", src: "/assets/clients/sphere-it.svg" },
+		{ name: "100 Power", src: "/digital-marketing/assets/clients/100-power.png" },
+		{ name: "Direct LS", src: "/digital-marketing/assets/clients/direct-ls.svg" },
+		{ name: "M2Mtek", src: "/digital-marketing/assets/clients/m2mtek.png" },
+		{ name: "Maxline", src: "/digital-marketing/assets/clients/maxline.png" },
+		{ name: "MC", src: "/digital-marketing/assets/clients/mc.svg" },
+		{ name: "Piptan", src: "/digital-marketing/assets/clients/piptan.png" },
+		{ name: "Qordz", src: "/digital-marketing/assets/clients/qordz.svg" },
+		{ name: "Simply KF", src: "/digital-marketing/assets/clients/simply-kf.png" },
+		{ name: "Smart Kitchen", src: "/digital-marketing/assets/clients/smart-kitchen.png" },
+		{ name: "Sphere IT", src: "/digital-marketing/assets/clients/sphere-it.svg" },
 	];
 
 	return (

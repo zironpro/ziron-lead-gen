@@ -52,7 +52,7 @@ export function Navbar() {
 						}`}
 						height={110}
 						priority
-						src="/assets/logo.svg"
+						src="/digital-marketing/assets/logo.svg"
 						width={605}
 					/>
 				</Link>

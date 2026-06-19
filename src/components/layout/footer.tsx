@@ -13,7 +13,7 @@ export function Footer() {
 							alt="Ziron Pro Logo"
 							className="h-10 w-auto object-contain"
 							height={36}
-							src="/assets/logo.svg"
+							src="/digital-marketing/assets/logo.svg"
 							width={200}
 						/>
 					</div>
@@ -24,21 +24,21 @@ export function Footer() {
 							alt="Google Partner"
 							className="h-6 w-auto shrink-0 object-contain transition-transform hover:scale-105 sm:h-8"
 							height={40}
-							src="/assets/partner/google.svg"
+							src="/digital-marketing/assets/partner/google.svg"
 							width={120}
 						/>
 						<Image
 							alt="Meta Partner"
 							className="h-6 w-auto shrink-0 object-contain transition-transform hover:scale-105 sm:h-8"
 							height={40}
-							src="/assets/partner/meta.svg"
+							src="/digital-marketing/assets/partner/meta.svg"
 							width={120}
 						/>
 						<Image
 							alt="TikTok Partner"
 							className="h-6 w-auto shrink-0 object-contain transition-transform hover:scale-105 sm:h-8"
 							height={40}
-							src="/assets/partner/tiktok.svg"
+							src="/digital-marketing/assets/partner/tiktok.svg"
 							width={120}
 						/>
 					</div>
