@@ -38,7 +38,7 @@ export function FloatingButtonsMobile() {
 						{/* WhatsApp Button */}
 						<a
 							className="flex flex-1 items-center justify-center gap-2 rounded-lg bg-[#25D366] font-bold text-sm text-white tracking-wide shadow-md transition-colors hover:bg-[#20bd5a]"
-							href="https://wa.me/971566646539"
+							href="https://wa.me/971542588446"
 							rel="noopener noreferrer"
 							target="_blank"
 						>

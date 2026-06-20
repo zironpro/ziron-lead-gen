@@ -14,6 +14,7 @@ import { motion } from "motion/react";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { toastManager } from "@/components/ui/toast";
 
 import { sendContactFormSubmissionEmail } from "@/feature/email/nodemailer/send-contact-form-submission";
 
@@ -56,7 +57,9 @@ const WhatsAppIcon = (props: React.SVGProps<SVGSVGElement>) => (
 );
 
 export function FormSection() {
-	const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+	const [status, setStatus] = useState<
+		"idle" | "loading" | "success" | "error"
+	>("idle");
 
 	async function handleSubmit(formData: FormData) {
 		setStatus("loading");
@@ -74,8 +77,19 @@ export function FormSection() {
 
 		if (isSent) {
 			setStatus("success");
+			toastManager.add({
+				type: "success",
+				title: "Success!",
+				description: "Your message has been sent successfully.",
+			});
 		} else {
 			setStatus("error");
+			toastManager.add({
+				type: "error",
+				title: "Something went wrong",
+				description:
+					"There was a problem sending your message. Please try again.",
+			});
 		}
 	}
 
@@ -155,10 +169,7 @@ export function FormSection() {
 								</p>
 							</div>
 
-							<form
-								action={handleSubmit}
-								className="flex flex-col gap-5"
-							>
+							<form action={handleSubmit} className="flex flex-col gap-5">
 								{/* Name */}
 								<div className="relative">
 									<User className="absolute top-1/2 left-4 h-5 w-5 -translate-y-1/2 text-slate-400" />
@@ -206,17 +217,24 @@ export function FormSection() {
 									/>
 								</div>
 
-								<Button 
+								<Button
 									className="group mt-2 h-14 w-full rounded-xl bg-[#ffc650] font-bold text-lg text-white shadow-[#ffc650]/ shadow-lg transition-all hover:bg-amber-700 hover:shadow-[#ffc650]/"
 									disabled={status === "loading" || status === "success"}
 									type="submit"
 								>
-									{status === "loading" ? "Sending..." : status === "success" ? "Sent Successfully!" : "Get My Free Audit"}
-									{status !== "success" && <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />}
+									{status === "loading"
+										? "Sending..."
+										: status === "success"
+											? "Sent Successfully!"
+											: "Get My Free Audit"}
+									{status !== "success" && (
+										<ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+									)}
 								</Button>
 								{status === "error" && (
 									<p className="text-center font-medium text-red-500 text-sm">
-										Failed to send message. Please try again or contact us directly.
+										Failed to send message. Please try again or contact us
+										directly.
 									</p>
 								)}
 								<div className="mt-4 flex items-center justify-center gap-2 text-slate-500">

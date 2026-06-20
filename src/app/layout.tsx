@@ -10,6 +10,7 @@ import { clash, inter, mono } from "@/assets/fonts";
 
 import { cn } from "@/lib/utils";
 import "./globals.css";
+import { ToastProvider } from "@/components/ui/toast";
 
 export const metadata: Metadata = {
 	title: "Best Digital Marketing Agency in UAE",
@@ -32,14 +33,16 @@ export default function RootLayout({
 					mono.variable
 				)}
 			>
-				<Navbar />
-				<main className="relative flex w-full flex-1 flex-col overflow-x-hidden">
-					{children}
-				</main>
-				<Footer />
-				<WhatsAppButton />
-				<NextSectionButton />
-				<FloatingButtonsMobile />
+				<ToastProvider>
+					<Navbar />
+					<main className="relative flex w-full flex-1 flex-col overflow-x-hidden">
+						{children}
+					</main>
+					<Footer />
+					<WhatsAppButton />
+					<NextSectionButton />
+					<FloatingButtonsMobile />
+				</ToastProvider>
 			</body>
 		</html>
 	);

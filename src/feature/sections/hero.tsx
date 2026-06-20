@@ -134,7 +134,7 @@ export function Hero() {
 										nativeButton={false}
 										render={
 											<Link
-												href="https://wa.me/971566646539"
+												href="https://wa.me/971542588446"
 												rel="noopener noreferrer"
 												target="_blank"
 											/>
