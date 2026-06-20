@@ -7,7 +7,6 @@ import Link from "next/link";
 import { Check, ChevronDown, ChevronUp } from "lucide-react";
 import { motion } from "motion/react";
 
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
 	Carousel,
@@ -158,32 +157,23 @@ export function Package() {
 
 	return (
 		<section
-			className="relative overflow-hidden border-slate-100 border-b bg-slate-50 pt-16 pb-16 md:pt-24 md:pb-24"
+			className="relative overflow-hidden bg-[#fafafa] pt-8 pb-20 md:pt-12 md:pb-32"
 			id="pricing"
 		>
-			{/* Decorative Background */}
-			<div className="pointer-events-none absolute top-0 left-0 z-0 h-[500px] w-full rounded-b-[100px] bg-white shadow-[0_20px_60px_-20px_rgba(0,0,0,0.03)] sm:rounded-b-[200px]" />
-
 			<div className="container relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 				{/* Header */}
 				<motion.div
-					className="mb-16 flex flex-col items-center justify-center text-center"
+					className="mb-16 grid grid-cols-1 items-center gap-8 text-left md:grid-cols-2 md:gap-12"
 					initial={{ opacity: 0, y: 20 }}
 					transition={{ duration: 0.6 }}
 					viewport={{ once: true }}
 					whileInView={{ opacity: 1, y: 0 }}
 				>
-					<Badge className="mb-6 rounded-lg border-none bg-slate-900 px-4 py-1.5 font-semibold text-white text-xs tracking-wider hover:bg-slate-800">
-						<span className="mr-2 h-2 w-2 rounded-full bg-amber-500" />
-						Pricing Plans
-					</Badge>
-					<h2 className="mb-6 font-extrabold text-4xl text-slate-900 leading-tight tracking-tight md:text-5xl lg:text-6xl">
-						Transparent Pricing.
-						<br /> <span className="text-amber-500">Unlimited Value.</span>
+					<h2 className="font-extrabold text-5xl text-slate-900 tracking-tight md:text-6xl">
+						Pricing plans
 					</h2>
-					<p className="max-w-2xl text-lg text-slate-600 md:text-xl">
-						Choose the perfect package to accelerate your growth. No hidden
-						fees, just pure ROI-focused marketing.
+					<p className="font-medium text-lg text-slate-900 md:text-xl">
+						Choose the right plan for your needs.
 					</p>
 				</motion.div>
 
@@ -192,7 +182,7 @@ export function Package() {
 					className="w-full max-w-full"
 					opts={{ align: "center", loop: false }}
 				>
-					<CarouselContent className="-ml-4 items-start pt-6 pb-6 md:-ml-8">
+					<CarouselContent className="-ml-4 items-stretch pt-6 pb-6 md:-ml-8">
 						{packages.map((pkg, index) => {
 							const isExpanded = expandedCards.includes(index);
 							const visibleCategories = isExpanded
@@ -205,54 +195,45 @@ export function Package() {
 									key={pkg.title}
 								>
 									<motion.div
-										className={`relative w-full rounded-3xl border bg-white shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)] ${
-											pkg.popular
-												? "border-amber-400 shadow-amber-500/10 ring-4 ring-amber-500/10"
-												: "border-slate-200 hover:border-amber-200"
-										} flex h-full flex-col transition-all duration-300`}
+										className="relative flex h-full w-full flex-col rounded-[32px] bg-white p-3 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.06)]"
 										initial={{ opacity: 0, y: 40 }}
-										key={pkg.title}
 										transition={{ duration: 0.6, delay: index * 0.1 }}
 										viewport={{ once: true }}
 										whileInView={{ opacity: 1, y: 0 }}
 									>
-										{/* Gradient background layers */}
-										<div className="pointer-events-none absolute inset-0 z-0 overflow-hidden rounded-3xl">
-											<div className="absolute -top-20 left-1/2 h-[200px] w-full -translate-x-1/2 bg-blue-100/60 blur-[60px]" />
-											<div className="absolute top-[160px] -right-20 -left-20 h-[140px] bg-gradient-to-r from-orange-200/60 via-amber-200/60 to-orange-200/60 blur-[45px]" />
+										{/* Inner Top Colored Box */}
+										<div
+											className={`flex flex-col items-start rounded-[24px] p-6 pb-8 ${
+												pkg.popular
+													? "bg-gradient-to-br from-[#e0e7ff] to-[#eef2ff]"
+													: "bg-[#f4f4f5]"
+											}`}
+										>
+											<div className="mb-6 inline-flex items-center justify-center rounded-full bg-white/90 px-4 py-1.5 font-bold text-[11px] text-slate-900 uppercase tracking-wider shadow-sm">
+												{pkg.title}
+											</div>
+
+											<div className="mb-2 flex items-baseline gap-1">
+												<span className="font-extrabold text-4xl text-slate-900 tracking-tight xl:text-5xl">
+													{pkg.price}
+												</span>
+												{pkg.priceSub &&
+													pkg.priceSub !== "Tailored Investment Plan" && (
+														<span className="font-bold text-slate-900 text-sm">
+															/{pkg.priceSub.replace("per ", "")}
+														</span>
+													)}
+											</div>
+
+											<p className="font-medium text-slate-900 text-sm">
+												{pkg.subtitle}
+											</p>
 										</div>
 
-										{pkg.popular && (
-											<div className="absolute top-0 left-1/2 z-20 -translate-x-1/2 -translate-y-1/2">
-												<div className="rounded-full bg-amber-500 px-4 py-1.5 font-bold text-white text-xs uppercase tracking-wider shadow-amber-500/30 shadow-lg">
-													Most Popular
-												</div>
-											</div>
-										)}
-
-										<div className="relative z-10 flex h-full flex-col p-8 sm:p-10">
-											<div className="mb-8">
-												<h3 className="mb-3 font-bold text-2xl text-slate-900 tracking-tight">
-													{pkg.title}
-												</h3>
-												<p className="h-10 font-medium text-slate-500 text-sm">
-													{pkg.subtitle}
-												</p>
-											</div>
-
-											<div className="mb-8 flex flex-col border-slate-100 border-b pb-8">
-												<div className="flex items-end gap-2">
-													<span className="font-extrabold text-4xl text-slate-900 leading-none tracking-tight xl:text-5xl">
-														{pkg.price}
-													</span>
-												</div>
-												<span className="mt-2 font-medium text-slate-500 text-sm">
-													{pkg.priceSub}
-												</span>
-											</div>
-
+										{/* Button */}
+										<div className="px-2 pt-4">
 											<Button
-												className="mb-10 h-14 w-full shrink-0 rounded-xl bg-black font-bold text-base text-white shadow-black/10 shadow-lg transition-all hover:bg-slate-900"
+												className="h-[52px] w-full rounded-full bg-[#18181b] font-medium text-[15px] text-white shadow-md transition-all hover:bg-black"
 												nativeButton={false}
 												onClick={(e) => {
 													e.preventDefault();
@@ -262,34 +243,35 @@ export function Package() {
 												}}
 												render={<Link href="#contact" />}
 											>
-												{pkg.popular ? "Get Started Now" : "Choose Plan"}
+												{pkg.price === "Custom" ? "Contact Us" : "Get Started"}
 											</Button>
+										</div>
 
-											<div className="flex flex-1 flex-col gap-8">
+										{/* Features List */}
+										<div className="flex flex-1 flex-col px-4 py-8">
+											<div className="flex flex-col gap-6">
 												{visibleCategories.map((category) => (
 													<motion.div
 														animate={{ opacity: 1, height: "auto" }}
-														className="flex flex-col gap-4"
+														className="flex flex-col gap-3"
 														initial={{ opacity: 0, height: 0 }}
 														key={category.name}
 														transition={{ duration: 0.3 }}
 													>
-														<h4 className="font-bold text-[15px] text-slate-900 uppercase tracking-wide">
+														<h4 className="font-bold text-[13px] text-slate-400 uppercase tracking-wide">
 															{category.name}
 														</h4>
 														<ul className="flex flex-col gap-3">
 															{category.items.map((item) => (
 																<li
-																	className="flex items-start gap-3 text-slate-600"
+																	className="flex items-start gap-3"
 																	key={item}
 																>
-																	<div className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-amber-100">
-																		<Check
-																			className="h-3 w-3 text-amber-600"
-																			strokeWidth={3}
-																		/>
-																	</div>
-																	<span className="font-medium text-[15px] leading-snug">
+																	<Check
+																		className="mt-0.5 h-[18px] w-[18px] shrink-0 text-slate-300"
+																		strokeWidth={3}
+																	/>
+																	<span className="font-medium text-[14px] text-slate-700 leading-snug">
 																		{item}
 																	</span>
 																</li>
@@ -301,7 +283,7 @@ export function Package() {
 
 											{pkg.categories.length > 1 && (
 												<button
-													className="mt-8 flex w-full items-center justify-center gap-1.5 rounded-lg border border-slate-200 py-3 font-bold text-slate-600 text-sm transition-colors hover:bg-slate-50 hover:text-slate-900"
+													className="mt-8 flex w-full items-center justify-center gap-1.5 py-2 font-bold text-slate-400 text-sm transition-colors hover:text-slate-900"
 													onClick={() => toggleExpand(index)}
 												>
 													{isExpanded ? (
@@ -323,8 +305,8 @@ export function Package() {
 						})}
 					</CarouselContent>
 					<div className="mt-4 flex items-center justify-center gap-4 lg:hidden">
-						<CarouselPrevious className="static h-12 w-12 translate-y-0 border-slate-200 bg-white text-slate-700 shadow-sm hover:bg-slate-50 hover:text-amber-600" />
-						<CarouselNext className="static h-12 w-12 translate-y-0 border-slate-200 bg-white text-slate-700 shadow-sm hover:bg-slate-50 hover:text-amber-600" />
+						<CarouselPrevious className="static h-12 w-12 translate-y-0 border-slate-200 bg-white text-slate-700 shadow-sm hover:bg-slate-50 hover:text-slate-900" />
+						<CarouselNext className="static h-12 w-12 translate-y-0 border-slate-200 bg-white text-slate-700 shadow-sm hover:bg-slate-50 hover:text-slate-900" />
 					</div>
 				</Carousel>
 			</div>

@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
+import { InfoNav } from "@/components/layout/info-nav";
+
 export function Navbar() {
 	const [isScrolled, setIsScrolled] = useState(false);
 
@@ -30,11 +32,12 @@ export function Navbar() {
 		<header
 			className={`fixed top-0 z-50 w-full transition-all duration-500 ${
 				isScrolled
-					? "border-slate-200 border-b bg-white/90 py-4 backdrop-blur-md"
-					: "border-transparent bg-transparent py-6 md:py-8"
+					? "border-slate-200 border-b bg-white/90 backdrop-blur-md"
+					: "border-transparent bg-transparent"
 			}`}
 		>
-			<div className="container mx-auto flex max-w-[1200px] items-center justify-center px-4 sm:px-6 md:justify-start lg:px-8">
+			<InfoNav />
+			<div className={`container mx-auto flex max-w-[1200px] items-center justify-center px-4 sm:px-6 md:justify-start lg:px-8 ${isScrolled ? "py-4" : "py-6 md:py-8"}`}>
 				<Link
 					className="flex flex-shrink-0 items-center transition-opacity hover:opacity-80"
 					href="/"

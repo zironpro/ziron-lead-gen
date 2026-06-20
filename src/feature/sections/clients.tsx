@@ -12,16 +12,31 @@ import {
 
 export function Clients() {
 	const clientLogos = [
-		{ name: "100 Power", src: "/digital-marketing/assets/clients/100-power.png" },
-		{ name: "Direct LS", src: "/digital-marketing/assets/clients/direct-ls.svg" },
+		{
+			name: "100 Power",
+			src: "/digital-marketing/assets/clients/100-power.png",
+		},
+		{
+			name: "Direct LS",
+			src: "/digital-marketing/assets/clients/direct-ls.svg",
+		},
 		{ name: "M2Mtek", src: "/digital-marketing/assets/clients/m2mtek.png" },
 		{ name: "Maxline", src: "/digital-marketing/assets/clients/maxline.png" },
 		{ name: "MC", src: "/digital-marketing/assets/clients/mc.svg" },
 		{ name: "Piptan", src: "/digital-marketing/assets/clients/piptan.png" },
 		{ name: "Qordz", src: "/digital-marketing/assets/clients/qordz.svg" },
-		{ name: "Simply KF", src: "/digital-marketing/assets/clients/simply-kf.png" },
-		{ name: "Smart Kitchen", src: "/digital-marketing/assets/clients/smart-kitchen.png" },
-		{ name: "Sphere IT", src: "/digital-marketing/assets/clients/sphere-it.svg" },
+		{
+			name: "Simply KF",
+			src: "/digital-marketing/assets/clients/simply-kf.png",
+		},
+		{
+			name: "Smart Kitchen",
+			src: "/digital-marketing/assets/clients/smart-kitchen.png",
+		},
+		{
+			name: "Sphere IT",
+			src: "/digital-marketing/assets/clients/sphere-it.svg",
+		},
 	];
 
 	return (
@@ -46,6 +61,11 @@ export function Clients() {
 				>
 					<Carousel
 						autoScroll={true}
+						autoScrollOptions={{
+							speed: 2,
+							stopOnInteraction: false,
+							stopOnMouseEnter: false,
+						}}
 						className="mask-image-fade w-full"
 						opts={{
 							align: "start",
