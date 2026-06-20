@@ -52,7 +52,7 @@ function Counter({
 export function Hero() {
 	return (
 		<>
-			<section className="relative overflow-hidden bg-[#f7f8fa] pt-50 pb-36 md:pt-56 md:pb-48 lg:pt-48 lg:pb-56">
+			<section className="relative overflow-hidden bg-[#f7f8fa] pt-30 pb-36 md:pt-24 md:pb-48 lg:pt-24 lg:pb-56">
 				{/* Software House Inspired Background */}
 				<div className="pointer-events-none absolute inset-0 overflow-hidden">
 					{/* Base Background */}

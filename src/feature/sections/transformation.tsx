@@ -36,6 +36,19 @@ export function Transformation() {
 				>
 					{/* Left Side: Texts */}
 					<div className="flex flex-col space-y-8">
+						{/* Mobile Image (Hidden on Desktop) */}
+						<div className="relative mx-auto w-full max-w-md lg:hidden">
+							<div className="relative overflow-hidden rounded-2xl shadow-2xl shadow-amber-500/10">
+								<Image
+									alt="Transformation results"
+									className="h-auto w-full object-cover"
+									height={1200}
+									src="/digital-marketing/image/socialmedia.jpeg"
+									width={1200}
+								/>
+							</div>
+						</div>
+
 						<div className="space-y-4">
 							<h3 className="font-bold text-3xl text-slate-900 tracking-tight">
 								From silent followers to highly qualified leads.
@@ -45,19 +58,6 @@ export function Transformation() {
 								engagement and inconsistent inquiries. We completely overhaul
 								your strategy to focus on what matters: revenue.
 							</p>
-						</div>
-
-						{/* Mobile Image (Hidden on Desktop) */}
-						<div className="relative mx-auto w-full max-w-md lg:hidden">
-							<div className="relative overflow-hidden rounded-2xl shadow-2xl shadow-amber-500/10">
-								<Image
-									alt="Transformation results"
-									className="h-auto w-full object-cover"
-									height={500}
-									src="/digital-marketing/image/socialmedia.jpeg"
-									width={300}
-								/>
-							</div>
 						</div>
 
 						<ul className="space-y-4">
@@ -101,9 +101,9 @@ export function Transformation() {
 							<Image
 								alt="Transformation results"
 								className="h-auto w-full object-cover"
-								height={500}
+								height={1200}
 								src="/digital-marketing/image/socialmedia.jpeg"
-								width={300}
+								width={1200}
 							/>
 						</div>
 					</div>
