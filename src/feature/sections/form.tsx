@@ -1,5 +1,7 @@
 "use client";
 
+import { useState } from "react";
+
 import {
 	ArrowRight,
 	AtSign,
@@ -12,6 +14,8 @@ import { motion } from "motion/react";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+
+import { sendContactFormSubmissionEmail } from "@/feature/email/nodemailer/send-contact-form-submission";
 
 const InstagramIcon = (props: React.SVGProps<SVGSVGElement>) => (
 	<svg
@@ -52,6 +56,29 @@ const WhatsAppIcon = (props: React.SVGProps<SVGSVGElement>) => (
 );
 
 export function FormSection() {
+	const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+
+	async function handleSubmit(formData: FormData) {
+		setStatus("loading");
+		const name = formData.get("name") as string;
+		const company = formData.get("company") as string;
+		const phone = formData.get("phone") as string;
+		const website = formData.get("website") as string;
+
+		const isSent = await sendContactFormSubmissionEmail({
+			name,
+			company,
+			phone,
+			website,
+		});
+
+		if (isSent) {
+			setStatus("success");
+		} else {
+			setStatus("error");
+		}
+	}
+
 	return (
 		<section className="relative overflow-hidden bg-slate-900 pt-12 pb-20 md:pt-16 md:pb-32">
 			<div className="container relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -66,7 +93,7 @@ export function FormSection() {
 					>
 						<h2 className="mb-6 font-extrabold text-4xl text-white leading-tight tracking-tight md:text-5xl lg:text-6xl">
 							Ready to scale your <br className="hidden sm:block" />
-							<span className="text-amber-500">revenue</span>?
+							<span className="text-[#ffc650]">revenue</span>?
 						</h2>
 						<p className="mb-10 max-w-xl text-lg text-slate-300 leading-relaxed md:text-xl">
 							Fill out the form to get a complimentary marketing audit and
@@ -120,7 +147,7 @@ export function FormSection() {
 							<div className="mb-8 text-center sm:text-left">
 								<h3 className="font-bold text-2xl text-slate-900 tracking-tight sm:text-3xl">
 									Get Your Free <br className="hidden sm:block" />
-									<span className="text-amber-600">Social Media Audit</span>
+									<span className="text-[#ffc650]">Social Media Audit</span>
 								</h3>
 								<p className="mt-3 text-slate-600 text-sm sm:text-base">
 									We'll review your social media and create a custom strategy to
@@ -129,16 +156,18 @@ export function FormSection() {
 							</div>
 
 							<form
+								action={handleSubmit}
 								className="flex flex-col gap-5"
-								onSubmit={(e) => e.preventDefault()}
 							>
 								{/* Name */}
 								<div className="relative">
 									<User className="absolute top-1/2 left-4 h-5 w-5 -translate-y-1/2 text-slate-400" />
 									<Input
-										className="h-14 rounded-xl border border-slate-200 bg-slate-50 pl-12 text-base text-slate-900 shadow-sm transition-colors placeholder:text-slate-400 focus-visible:border-amber-500 focus-visible:bg-white focus-visible:ring-1 focus-visible:ring-amber-500"
+										className="h-14 rounded-xl border border-slate-200 bg-slate-50 pl-12 text-base text-slate-900 shadow-sm transition-colors placeholder:text-slate-400 focus-visible:border-[#ffc650] focus-visible:bg-white focus-visible:ring-1 focus-visible:ring-amber-500"
 										id="name"
+										name="name"
 										placeholder="Full Name"
+										required
 									/>
 								</div>
 
@@ -146,8 +175,9 @@ export function FormSection() {
 								<div className="relative">
 									<Building2 className="absolute top-1/2 left-4 h-5 w-5 -translate-y-1/2 text-slate-400" />
 									<Input
-										className="h-14 rounded-xl border border-slate-200 bg-slate-50 pl-12 text-base text-slate-900 shadow-sm transition-colors placeholder:text-slate-400 focus-visible:border-amber-500 focus-visible:bg-white focus-visible:ring-1 focus-visible:ring-amber-500"
+										className="h-14 rounded-xl border border-slate-200 bg-slate-50 pl-12 text-base text-slate-900 shadow-sm transition-colors placeholder:text-slate-400 focus-visible:border-[#ffc650] focus-visible:bg-white focus-visible:ring-1 focus-visible:ring-amber-500"
 										id="company"
+										name="company"
 										placeholder="Company Name"
 									/>
 								</div>
@@ -156,9 +186,11 @@ export function FormSection() {
 								<div className="relative">
 									<Phone className="absolute top-1/2 left-4 h-5 w-5 -translate-y-1/2 text-slate-400" />
 									<Input
-										className="h-14 rounded-xl border border-slate-200 bg-slate-50 pl-12 text-base text-slate-900 shadow-sm transition-colors placeholder:text-slate-400 focus-visible:border-amber-500 focus-visible:bg-white focus-visible:ring-1 focus-visible:ring-amber-500"
+										className="h-14 rounded-xl border border-slate-200 bg-slate-50 pl-12 text-base text-slate-900 shadow-sm transition-colors placeholder:text-slate-400 focus-visible:border-[#ffc650] focus-visible:bg-white focus-visible:ring-1 focus-visible:ring-amber-500"
 										id="phone"
+										name="phone"
 										placeholder="WhatsApp Number"
+										required
 										type="tel"
 									/>
 								</div>
@@ -167,16 +199,26 @@ export function FormSection() {
 								<div className="relative">
 									<AtSign className="absolute top-1/2 left-4 h-5 w-5 -translate-y-1/2 text-slate-400" />
 									<Input
-										className="h-14 rounded-xl border border-slate-200 bg-slate-50 pl-12 text-base text-slate-900 shadow-sm transition-colors placeholder:text-slate-400 focus-visible:border-amber-500 focus-visible:bg-white focus-visible:ring-1 focus-visible:ring-amber-500"
+										className="h-14 rounded-xl border border-slate-200 bg-slate-50 pl-12 text-base text-slate-900 shadow-sm transition-colors placeholder:text-slate-400 focus-visible:border-[#ffc650] focus-visible:bg-white focus-visible:ring-1 focus-visible:ring-amber-500"
 										id="website"
+										name="website"
 										placeholder="Website / Instagram Link"
 									/>
 								</div>
 
-								<Button className="group mt-2 h-14 w-full rounded-xl bg-amber-600 font-bold text-lg text-white shadow-amber-600/25 shadow-lg transition-all hover:bg-amber-700 hover:shadow-amber-600/40">
-									Get My Free Audit
-									<ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+								<Button 
+									className="group mt-2 h-14 w-full rounded-xl bg-[#ffc650] font-bold text-lg text-white shadow-[#ffc650]/ shadow-lg transition-all hover:bg-amber-700 hover:shadow-[#ffc650]/"
+									disabled={status === "loading" || status === "success"}
+									type="submit"
+								>
+									{status === "loading" ? "Sending..." : status === "success" ? "Sent Successfully!" : "Get My Free Audit"}
+									{status !== "success" && <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />}
 								</Button>
+								{status === "error" && (
+									<p className="text-center font-medium text-red-500 text-sm">
+										Failed to send message. Please try again or contact us directly.
+									</p>
+								)}
 								<div className="mt-4 flex items-center justify-center gap-2 text-slate-500">
 									<ShieldCheck className="h-4 w-4 text-green-500" />
 									<p className="font-medium text-xs sm:text-sm">

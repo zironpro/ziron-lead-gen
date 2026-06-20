@@ -6,17 +6,17 @@ import { motion } from "motion/react";
 export function HeroResults() {
 	const metrics = [
 		{
-			icon: <Users className="h-8 w-8 text-amber-500" strokeWidth={2} />,
+			icon: <Users className="h-8 w-8 text-[#ffc650]" strokeWidth={2} />,
 			value: "50",
 			label: "Qualified Leads",
 			sublabel: "in 10 Days",
 			bgClass: "bg-white",
-			borderClass: "border-amber-100",
+			borderClass: "border-[#ffc650]",
 			iconBgClass: "bg-white",
 		},
 		{
 			icon: (
-				<CircleDollarSign className="h-8 w-8 text-amber-500" strokeWidth={2} />
+				<CircleDollarSign className="h-8 w-8 text-[#ffc650]" strokeWidth={2} />
 			),
 			value: "AED 7.45",
 			label: "Cost Per Lead",
@@ -26,7 +26,7 @@ export function HeroResults() {
 			iconBgClass: "bg-white",
 		},
 		{
-			icon: <TrendingUp className="h-8 w-8 text-amber-500" strokeWidth={2} />,
+			icon: <TrendingUp className="h-8 w-8 text-[#ffc650]" strokeWidth={2} />,
 			value: "+310%",
 			label: "Increase in Reach",
 			sublabel: "Organic & Paid",
@@ -35,7 +35,7 @@ export function HeroResults() {
 			iconBgClass: "bg-white",
 		},
 		{
-			icon: <UserPlus className="h-8 w-8 text-amber-500" strokeWidth={2} />,
+			icon: <UserPlus className="h-8 w-8 text-[#ffc650]" strokeWidth={2} />,
 			value: "23",
 			label: "New Customers",
 			sublabel: "Converted",

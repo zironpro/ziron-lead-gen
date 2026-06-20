@@ -38,7 +38,7 @@ export function Transformation() {
 					<div className="flex flex-col space-y-8">
 						{/* Mobile Image (Hidden on Desktop) */}
 						<div className="relative mx-auto w-full max-w-lg lg:hidden">
-							<div className="relative overflow-hidden rounded-2xl shadow-2xl shadow-amber-500/10">
+							<div className="relative overflow-hidden rounded-2xl shadow-2xl shadow-[#ffc650]/">
 								<Image
 									alt="Transformation results"
 									className="h-auto w-full object-cover"
@@ -70,8 +70,8 @@ export function Transformation() {
 								"Consistent daily inquiries",
 							].map((item) => (
 								<li className="flex items-center gap-3" key={item}>
-									<div className="flex shrink-0 items-center justify-center rounded-full bg-amber-100 p-1">
-										<CheckCircle2 className="h-5 w-5 text-amber-600" />
+									<div className="flex shrink-0 items-center justify-center rounded-full bg-[#ffc650]/20 p-1">
+										<CheckCircle2 className="h-5 w-5 text-[#ffc650]" />
 									</div>
 									<span className="font-semibold text-lg text-slate-700">
 										{item}
@@ -89,7 +89,7 @@ export function Transformation() {
 									<span className="font-medium text-2xl text-slate-300 line-through">
 										5-8
 									</span>
-									<span className="font-black text-4xl text-amber-600">
+									<span className="font-black text-4xl text-[#ffc650]">
 										80+
 									</span>
 								</div>
@@ -99,7 +99,7 @@ export function Transformation() {
 
 					{/* Right Side: Image (Hidden on Mobile) */}
 					<div className="relative mx-auto hidden w-full max-w-lg lg:block lg:max-w-2xl">
-						<div className="relative overflow-hidden rounded-2xl shadow-2xl shadow-amber-500/10">
+						<div className="relative overflow-hidden rounded-2xl shadow-2xl shadow-[#ffc650]/">
 							<Image
 								alt="Transformation results"
 								className="h-auto w-full object-cover"

@@ -9,13 +9,13 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 export function Challenge() {
 	const items = [
 		{
-			icon: <Users className="h-6 w-6 text-amber-600" />,
+			icon: <Users className="h-6 w-6 text-[#ffc650]" />,
 			title: "Low Engagement",
 			description:
 				"Very low likes, comments & reach, making the brand feel stagnant.",
-			bgClass: "bg-amber-50/50 hover:bg-amber-50",
-			borderClass: "hover:border-amber-200",
-			iconBgClass: "bg-amber-100 group-hover:bg-amber-200",
+			bgClass: "bg-[#ffc650]/10/50 hover:bg-[#ffc650]/10",
+			borderClass: "hover:border-[#ffc650]",
+			iconBgClass: "bg-[#ffc650]/20 group-hover:bg-[#ffc650]/30",
 		},
 		{
 			icon: <FileX className="h-6 w-6 text-rose-600" />,
@@ -72,7 +72,7 @@ export function Challenge() {
 					whileInView={{ opacity: 1, y: 0 }}
 				>
 					<Badge className="mb-6 rounded-lg border-none bg-slate-900 px-4 py-1.5 font-semibold text-white text-xs tracking-wider hover:bg-slate-800">
-						<span className="mr-2 h-2 w-2 rounded-full bg-amber-500" />
+						<span className="mr-2 h-2 w-2 rounded-full bg-[#ffc650]" />
 						Before Working With Us
 					</Badge>
 					<h2 className="font-extrabold text-4xl text-slate-900 leading-tight tracking-tight md:text-5xl">

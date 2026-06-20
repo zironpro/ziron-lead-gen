@@ -18,7 +18,7 @@ import {
 
 const packages = [
 	{
-		title: "Basic Package",
+		title: "Starter Growth",
 		subtitle: "Ideal for small business or startups",
 		price: "AED 2,500",
 		priceSub: "per month",
@@ -48,7 +48,7 @@ const packages = [
 		],
 	},
 	{
-		title: "Standard",
+		title: "Professional Growth",
 		subtitle: "Best for growing businesses",
 		price: "AED 4,500",
 		priceSub: "per month",
@@ -88,7 +88,7 @@ const packages = [
 		],
 	},
 	{
-		title: "Premium",
+		title: "Scale & Dominate",
 		subtitle: "Tailored for large businesses or High Growth Companies",
 		price: "Custom",
 		priceSub: "Tailored Investment Plan",

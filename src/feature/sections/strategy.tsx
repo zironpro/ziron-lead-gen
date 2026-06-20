@@ -59,7 +59,7 @@ export function Strategy() {
 									{index < steps.length - 1 && (
 										<div className="absolute top-16 left-8 z-0 -ml-[1px] h-[calc(100%-1rem)] w-[2px] bg-slate-100">
 											<motion.div
-												className="absolute top-0 left-0 w-full bg-amber-400"
+												className="absolute top-0 left-0 w-full bg-[#ffc650]"
 												initial={{ height: "0%" }}
 												transition={{
 													duration: 0.6,
@@ -75,7 +75,7 @@ export function Strategy() {
 											</div>
 											{/* Lit Arrowhead */}
 											<motion.div
-												className="absolute -bottom-3 left-1/2 -translate-x-1/2 text-amber-400"
+												className="absolute -bottom-3 left-1/2 -translate-x-1/2 text-[#ffc650]"
 												initial={{ opacity: 0 }}
 												transition={{ duration: 0.1, delay: (index + 1) * 1.0 }}
 												viewport={{ once: true }}
@@ -87,7 +87,7 @@ export function Strategy() {
 									)}
 
 									{/* Icon Container */}
-									<div className="relative z-10 flex h-16 w-16 shrink-0 items-center justify-center rounded-lg border border-amber-100 bg-amber-50 text-amber-600 shadow-sm transition-all duration-300 group-hover:bg-amber-600 group-hover:text-white group-hover:shadow-amber-200/50 group-hover:shadow-lg">
+									<div className="relative z-10 flex h-16 w-16 shrink-0 items-center justify-center rounded-lg border border-[#ffc650] bg-[#ffc650]/10 text-[#ffc650] shadow-sm transition-all duration-300 group-hover:bg-[#ffc650] group-hover:text-white group-hover:shadow-[#ffc650]/ group-hover:shadow-lg">
 										<div className="transition-colors duration-300">
 											{step.icon}
 										</div>
@@ -122,7 +122,7 @@ export function Strategy() {
 							whileInView={{ opacity: 1, y: 0 }}
 						>
 							<Badge className="mb-6 rounded-lg border-none bg-slate-900 px-4 py-1.5 font-semibold text-white text-xs tracking-wider hover:bg-slate-800">
-								<span className="mr-2 h-2 w-2 rounded-full bg-amber-500" />
+								<span className="mr-2 h-2 w-2 rounded-full bg-[#ffc650]" />
 								Our Strategy
 							</Badge>
 							<h2 className="font-extrabold text-4xl text-slate-900 leading-tight tracking-tight md:text-5xl">

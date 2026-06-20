@@ -70,7 +70,7 @@ export function CTC() {
 				<div className="relative z-10 flex max-w-2xl flex-col items-start gap-8 md:gap-12">
 					<h2 className="font-extrabold text-3xl leading-tight tracking-tight md:text-4xl lg:text-5xl">
 						Ready to grow? <br />
-						<span className="text-amber-400"> We’re ready to go.</span>
+						<span className="text-[#ffc650]"> We’re ready to go.</span>
 					</h2>
 				</div>
 

@@ -5,7 +5,7 @@ export function WhatsAppButton() {
 		<motion.a
 			animate={{ scale: 1, opacity: 1 }}
 			aria-label="Chat with us on WhatsApp"
-			className="fixed right-6 bottom-6 z-50 hidden h-14 w-14 cursor-pointer items-center justify-center rounded-lg bg-amber-500 text-slate-950 shadow-amber-500/20 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-amber-400 md:flex"
+			className="fixed right-6 bottom-6 z-50 hidden h-14 w-14 cursor-pointer items-center justify-center rounded-lg bg-[#ffc650] text-slate-950 shadow-[#ffc650]/ shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-[#ffc650] md:flex"
 			href="https://wa.me/971566646539" // Ziron Pro's phone number
 			initial={{ scale: 0, opacity: 0 }}
 			rel="noopener noreferrer"

@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 
+import Image from "next/image";
 import Link from "next/link";
 
 import { ArrowRight, TrendingUp } from "lucide-react";
@@ -52,7 +53,7 @@ function Counter({
 export function Hero() {
 	return (
 		<>
-			<section className="relative overflow-hidden bg-[#f7f8fa] pt-30 pb-36 md:pt-24 md:pb-48 lg:pt-24 lg:pb-56">
+			<section className="relative overflow-hidden bg-[#f7f8fa] pt-36 pb-36 md:pt-30 md:pb-48 lg:pt-28 lg:pb-56">
 				{/* Software House Inspired Background */}
 				<div className="pointer-events-none absolute inset-0 overflow-hidden">
 					{/* Base Background */}
@@ -61,11 +62,11 @@ export function Hero() {
 					{/* Left Side */}
 					<div className="absolute top-0 left-0 h-[60%] w-[12%] bg-white/70" />
 
-					<div className="absolute top-0 left-[8%] h-[55%] w-[18%] bg-amber-100/40" />
+					<div className="absolute top-0 left-[8%] h-[55%] w-[18%] bg-[#ffc650]/20/40" />
 
 					<div className="absolute top-[5%] left-[22%] h-[22%] w-[18%] -skew-x-[35deg] bg-slate-100/70" />
 
-					<div className="absolute top-[20%] left-[15%] h-[25%] w-[28%] -skew-x-[35deg] bg-amber-50/70" />
+					<div className="absolute top-[20%] left-[15%] h-[25%] w-[28%] -skew-x-[35deg] bg-[#ffc650]/10/70" />
 
 					{/* Center */}
 					<div className="absolute top-0 left-[35%] h-[30%] w-[18%] -skew-x-[35deg] bg-indigo-100/40" />
@@ -88,17 +89,17 @@ export function Hero() {
 				</div>
 
 				<div className="container relative z-10 mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8">
-					<div className="flex max-w-3xl flex-col items-start justify-center text-left">
+					<div className="grid grid-cols-1 items-center gap-4 md:gap-8 lg:grid-cols-2 lg:gap-12">
 						{/* Text Content */}
-						<div className="flex w-full animate-hero-fade-in flex-col items-start space-y-8">
-							<div className="inline-flex items-center gap-2 rounded-lg border border-amber-200 bg-amber-100 px-4 py-1.5 font-bold text-amber-700 text-sm tracking-wide">
+						<div className="flex w-full max-w-3xl animate-hero-fade-in flex-col items-start space-y-8 text-left">
+							<div className="inline-flex items-center gap-2 rounded-lg border border-[#ffc650] bg-[#ffc650]/20 px-4 py-1.5 font-bold text-[#ffc650] text-sm tracking-wide">
 								<TrendingUp className="h-4 w-4" />
 								<span>Proven Digital Marketing in UAE</span>
 							</div>
 
 							<h1 className="font-extrabold text-5xl text-slate-900 leading-[1.1] tracking-tight md:text-6xl lg:text-[72px]">
 								We Generated <br />
-								<span className="inline-block text-amber-500 drop-shadow-sm">
+								<span className="inline-block text-[#ffc650] drop-shadow-sm">
 									<Counter target={50} /> Qualified Leads
 								</span>{" "}
 								<br />
@@ -114,7 +115,7 @@ export function Hero() {
 								{/* Call to Action Buttons */}
 								<div className="flex w-full flex-col items-center justify-start gap-4 pt-4 sm:flex-row">
 									<Button
-										className="group h-14 w-full rounded-lg bg-amber-500 px-8 font-bold text-lg text-white shadow-amber-500/20 shadow-lg transition-all hover:bg-amber-600 sm:w-auto"
+										className="group h-14 w-full rounded-lg bg-[#ffc650] px-8 font-bold text-lg text-white shadow-[#ffc650]/ shadow-lg transition-all hover:bg-[#ffc650] sm:w-auto"
 										nativeButton={false}
 										onClick={(e) => {
 											e.preventDefault();
@@ -145,6 +146,20 @@ export function Hero() {
 									</Button>
 								</div>
 							</div>
+						</div>
+
+						{/* Right Image */}
+						<div className="relative flex w-full animate-hero-fade-in items-center justify-center pt-2 lg:pt-0">
+							<Image
+								alt="Hero Graphic"
+								className="h-auto w-full max-w-[600px] object-contain drop-shadow-2xl transition-transform duration-500 hover:scale-105"
+								height={1600}
+								priority
+								quality={100}
+								src="/digital-marketing/image/hero.png"
+								unoptimized={true}
+								width={1600}
+							/>
 						</div>
 					</div>
 				</div>

@@ -48,7 +48,7 @@ export function Results() {
 					<div className="mb-16 text-center md:mb-20">
 						<div className="flex w-full flex-col items-center justify-center gap-4">
 							<Badge className="mx-auto mb-6 flex w-fit items-center justify-center rounded-lg border-none bg-slate-900 px-4 py-1.5 font-semibold text-white text-xs tracking-wider hover:bg-slate-800">
-								<span className="mr-2 h-2 w-2 rounded-full bg-amber-500" />A
+								<span className="mr-2 h-2 w-2 rounded-full bg-[#ffc650]" />A
 								Real Client Growth Story Backed by Results
 							</Badge>
 							<h2 className="font-extrabold text-4xl text-slate-900 leading-tight tracking-tight md:text-5xl">
@@ -72,7 +72,7 @@ export function Results() {
 									<div className="mb-4 flex h-14 w-14 cursor-default items-center justify-center rounded-lg bg-slate-950 shadow-lg shadow-slate-900/20 transition-transform hover:scale-110">
 										{metric.icon}
 									</div>
-									<div className="mb-2 font-black text-2xl text-amber-500 md:text-3xl">
+									<div className="mb-2 font-black text-2xl text-[#ffc650] md:text-3xl">
 										{metric.value}
 									</div>
 									<div className="font-bold text-slate-900 text-sm leading-tight">

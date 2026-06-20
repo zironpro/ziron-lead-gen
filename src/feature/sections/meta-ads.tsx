@@ -14,28 +14,28 @@ export function MetaAds() {
 			<div className="pointer-events-none absolute top-0 left-0 -mt-20 -ml-20 h-72 w-72 rounded-full bg-blue-500/5 blur-3xl" />
 
 			<div className="container relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-				<div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-20">
+				<div className="grid grid-cols-1 items-stretch gap-12 lg:grid-cols-2 lg:gap-20">
 					{/* Left Column: Video */}
 					<motion.div
-						className="relative mx-auto w-full max-w-md lg:max-w-none"
+						className="relative mx-auto h-full w-full max-w-md lg:max-w-none"
 						initial={{ opacity: 0, x: -30 }}
 						transition={{ duration: 0.6 }}
 						viewport={{ once: true }}
 						whileInView={{ opacity: 1, x: 0 }}
 					>
-						<div className="relative overflow-hidden rounded-3xl border border-slate-200 bg-slate-50 shadow-2xl shadow-slate-200">
+						<div className="relative h-full overflow-hidden rounded-3xl border border-slate-200 bg-slate-50 shadow-2xl shadow-slate-200">
 							<div className="absolute top-4 left-4 z-10">
-								<Badge className="border-none bg-black/50 px-3 py-1 text-white text-xs uppercase tracking-widest backdrop-blur-md hover:bg-black/70">
+								<Badge className="border-none bg-black/50 px-3 py-1 text-white text-xs tracking-widest backdrop-blur-md hover:bg-black/70">
 									Live Ad Creative
 								</Badge>
 							</div>
 							<video
 								autoPlay
-								className="h-auto w-full"
+								className="h-full w-full object-cover"
 								loop
 								muted
 								playsInline
-								src="/digital-marketing/video/meta-ad.mp4"
+								src="/digital-marketing/video/meta.mp4"
 							/>
 						</div>
 
@@ -63,7 +63,7 @@ export function MetaAds() {
 
 					{/* Right Column: Content & Stats */}
 					<motion.div
-						className="mt-8 flex flex-col text-left lg:mt-0"
+						className="mt-8 flex flex-col justify-center text-left lg:mt-0"
 						initial={{ opacity: 0, x: 30 }}
 						transition={{ duration: 0.6, delay: 0.2 }}
 						viewport={{ once: true }}
@@ -72,21 +72,21 @@ export function MetaAds() {
 						<div className="mb-10 space-y-4">
 							<h3 className="font-bold text-3xl text-slate-900 tracking-tight">
 								Maxline Global{" "}
-								<span className="text-amber-500">Lead Gen Campaign</span>
+								<span className="text-[#ffc650]">Lead Gen Campaign</span>
 							</h3>
 							<p className="text-lg text-slate-600 leading-relaxed">
 								We deployed highly targeted video creatives across Facebook and
-								Instagram, utilizing broad targeting and machine learning to find
-								the perfect audience for Maxline Global.
+								Instagram, utilizing broad targeting and machine learning to
+								find the perfect audience for Maxline Global.
 							</p>
 						</div>
 
 						{/* Stats Grid */}
 						<div className="grid grid-cols-2 gap-4 sm:gap-6">
 							{/* Stat 1 */}
-							<div className="flex flex-col items-start rounded-2xl border border-slate-100 bg-slate-50 p-5 transition-all hover:-translate-y-1 hover:border-amber-200 hover:shadow-lg sm:p-6">
-								<div className="mb-4 rounded-xl bg-amber-100 p-3">
-									<TrendingUp className="h-5 w-5 text-amber-600 sm:h-6 sm:w-6" />
+							<div className="flex flex-col items-start rounded-2xl border border-slate-100 bg-slate-50 p-5 transition-all hover:-translate-y-1 hover:border-[#ffc650] hover:shadow-lg sm:p-6">
+								<div className="mb-4 rounded-xl bg-[#ffc650]/20 p-3">
+									<TrendingUp className="h-5 w-5 text-[#ffc650] sm:h-6 sm:w-6" />
 								</div>
 								<h4 className="mb-1 font-black text-2xl text-slate-900 sm:text-3xl">
 									+340%
@@ -97,7 +97,7 @@ export function MetaAds() {
 							</div>
 
 							{/* Stat 2 */}
-							<div className="flex flex-col items-start rounded-2xl border border-slate-100 bg-slate-50 p-5 transition-all hover:-translate-y-1 hover:border-amber-200 hover:shadow-lg sm:p-6">
+							<div className="flex flex-col items-start rounded-2xl border border-slate-100 bg-slate-50 p-5 transition-all hover:-translate-y-1 hover:border-[#ffc650] hover:shadow-lg sm:p-6">
 								<div className="mb-4 rounded-xl bg-blue-100 p-3">
 									<Users className="h-5 w-5 text-blue-600 sm:h-6 sm:w-6" />
 								</div>
@@ -110,7 +110,7 @@ export function MetaAds() {
 							</div>
 
 							{/* Stat 3 */}
-							<div className="flex flex-col items-start rounded-2xl border border-slate-100 bg-slate-50 p-5 transition-all hover:-translate-y-1 hover:border-amber-200 hover:shadow-lg sm:p-6">
+							<div className="flex flex-col items-start rounded-2xl border border-slate-100 bg-slate-50 p-5 transition-all hover:-translate-y-1 hover:border-[#ffc650] hover:shadow-lg sm:p-6">
 								<div className="mb-4 rounded-xl bg-emerald-100 p-3">
 									<Target className="h-5 w-5 text-emerald-600 sm:h-6 sm:w-6" />
 								</div>
@@ -123,7 +123,7 @@ export function MetaAds() {
 							</div>
 
 							{/* Stat 4 */}
-							<div className="flex flex-col items-start rounded-2xl border border-slate-100 bg-slate-50 p-5 transition-all hover:-translate-y-1 hover:border-amber-200 hover:shadow-lg sm:p-6">
+							<div className="flex flex-col items-start rounded-2xl border border-slate-100 bg-slate-50 p-5 transition-all hover:-translate-y-1 hover:border-[#ffc650] hover:shadow-lg sm:p-6">
 								<div className="mb-4 rounded-xl bg-purple-100 p-3">
 									<MousePointerClick className="h-5 w-5 text-purple-600 sm:h-6 sm:w-6" />
 								</div>
