@@ -45,11 +45,11 @@ export function MetaAds() {
 							</div>
 							<div className="flex-shrink-0 rounded-xl border border-slate-100 bg-slate-50 p-3">
 								<Image
-									src="/digital-marketing/assets/partner/meta.svg"
 									alt="Meta"
-									width={80}
-									height={40}
 									className="h-8 w-auto object-contain sm:h-10"
+									height={40}
+									src="/digital-marketing/assets/partner/meta.svg"
+									width={80}
 								/>
 							</div>
 						</div>

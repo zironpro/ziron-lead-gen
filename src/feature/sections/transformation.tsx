@@ -47,6 +47,19 @@ export function Transformation() {
 							</p>
 						</div>
 
+						{/* Mobile Image (Hidden on Desktop) */}
+						<div className="relative mx-auto w-full max-w-md lg:hidden">
+							<div className="relative overflow-hidden rounded-2xl shadow-2xl shadow-amber-500/10">
+								<Image
+									alt="Transformation results"
+									className="h-auto w-full object-cover"
+									height={500}
+									src="/digital-marketing/image/socialmedia.jpeg"
+									width={300}
+								/>
+							</div>
+						</div>
+
 						<ul className="space-y-4">
 							{[
 								"Data-driven social media campaigns",
@@ -82,40 +95,16 @@ export function Transformation() {
 						</div>
 					</div>
 
-					{/* Right Side: Image */}
-					<div className="relative mx-auto w-full max-w-[280px] lg:max-w-[340px]">
+					{/* Right Side: Image (Hidden on Mobile) */}
+					<div className="relative mx-auto hidden w-full max-w-md lg:block lg:max-w-xl">
 						<div className="relative overflow-hidden rounded-2xl shadow-2xl shadow-amber-500/10">
 							<Image
 								alt="Transformation results"
 								className="h-auto w-full object-cover"
-								height={600}
-								src="/digital-marketing/image/afterimg.png"
-								width={500}
+								height={500}
+								src="/digital-marketing/image/socialmedia.jpeg"
+								width={300}
 							/>
-						</div>
-						{/* Floating Element */}
-						<div className="absolute -bottom-6 -left-2 rounded-xl border border-slate-100 bg-white p-4 shadow-xl sm:-left-6">
-							<div className="flex items-center gap-3">
-								<div className="flex h-12 w-12 items-center justify-center rounded-full bg-green-100">
-									<svg
-										className="h-6 w-6 text-green-600"
-										fill="none"
-										stroke="currentColor"
-										viewBox="0 0 24 24"
-									>
-										<path
-											d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
-											strokeLinecap="round"
-											strokeLinejoin="round"
-											strokeWidth="2"
-										/>
-									</svg>
-								</div>
-								<div>
-									<p className="font-bold text-slate-900">+450%</p>
-									<p className="text-slate-500 text-sm">Engagement Rate</p>
-								</div>
-							</div>
 						</div>
 					</div>
 				</motion.div>

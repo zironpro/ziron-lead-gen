@@ -157,13 +157,13 @@ export function Package() {
 
 	return (
 		<section
-			className="relative overflow-hidden bg-[#fafafa] pt-8 pb-20 md:pt-12 md:pb-32"
+			className="relative overflow-hidden bg-[#fafafa] pt-8 pb-12 md:pt-12 md:pb-16"
 			id="pricing"
 		>
 			<div className="container relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 				{/* Header */}
 				<motion.div
-					className="mb-16 grid grid-cols-1 items-center gap-8 text-left md:grid-cols-2 md:gap-12"
+					className="mb-8 grid grid-cols-1 items-center gap-8 text-left md:mb-12 md:grid-cols-2 md:gap-12"
 					initial={{ opacity: 0, y: 20 }}
 					transition={{ duration: 0.6 }}
 					viewport={{ once: true }}
