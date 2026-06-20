@@ -37,13 +37,15 @@ export function Transformation() {
 					{/* Left Side: Texts */}
 					<div className="flex flex-col space-y-8">
 						{/* Mobile Image (Hidden on Desktop) */}
-						<div className="relative mx-auto w-full max-w-md lg:hidden">
+						<div className="relative mx-auto w-full max-w-lg lg:hidden">
 							<div className="relative overflow-hidden rounded-2xl shadow-2xl shadow-amber-500/10">
 								<Image
 									alt="Transformation results"
 									className="h-auto w-full object-cover"
 									height={1200}
+									quality={100}
 									src="/digital-marketing/image/socialmedia.jpeg"
+									unoptimized={true}
 									width={1200}
 								/>
 							</div>
@@ -96,13 +98,15 @@ export function Transformation() {
 					</div>
 
 					{/* Right Side: Image (Hidden on Mobile) */}
-					<div className="relative mx-auto hidden w-full max-w-md lg:block lg:max-w-xl">
+					<div className="relative mx-auto hidden w-full max-w-lg lg:block lg:max-w-2xl">
 						<div className="relative overflow-hidden rounded-2xl shadow-2xl shadow-amber-500/10">
 							<Image
 								alt="Transformation results"
 								className="h-auto w-full object-cover"
 								height={1200}
+								quality={100}
 								src="/digital-marketing/image/socialmedia.jpeg"
+								unoptimized={true}
 								width={1200}
 							/>
 						</div>
