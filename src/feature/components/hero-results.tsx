@@ -22,7 +22,7 @@ export function HeroResults() {
 			label: "Cost Per Lead",
 			sublabel: "(Reduced by 46%)",
 			bgClass: "bg-white",
-			borderClass: "border-emerald-100",
+			borderClass: "border-[#ffc650]",
 			iconBgClass: "bg-white",
 		},
 		{
@@ -31,7 +31,7 @@ export function HeroResults() {
 			label: "Increase in Reach",
 			sublabel: "Organic & Paid",
 			bgClass: "bg-white",
-			borderClass: "border-blue-100",
+			borderClass: "border-[#ffc650]",
 			iconBgClass: "bg-white",
 		},
 		{
@@ -40,13 +40,13 @@ export function HeroResults() {
 			label: "New Customers",
 			sublabel: "Converted",
 			bgClass: "bg-white",
-			borderClass: "border-purple-100",
+			borderClass: "border-[#ffc650]",
 			iconBgClass: "bg-white",
 		},
 	];
 
 	return (
-		<div className="w-full">
+		<div className="w-full rounded-3xl bg-white p-6 shadow-xl sm:p-8">
 			<div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
 				{metrics.map((metric, index) => (
 					<motion.div

@@ -7,7 +7,7 @@ import { motion } from "motion/react";
 
 export function Transformation() {
 	return (
-		<section className="relative pt-8 pb-12 md:pt-12">
+		<section className="relative bg-white pt-8 pb-12 md:pt-12">
 			<div className="container mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8">
 				{/* Grid Header */}
 				<motion.div
@@ -38,7 +38,7 @@ export function Transformation() {
 					<div className="flex flex-col space-y-8">
 						{/* Mobile Image (Hidden on Desktop) */}
 						<div className="relative mx-auto w-full max-w-lg lg:hidden">
-							<div className="relative overflow-hidden rounded-2xl shadow-2xl shadow-[#ffc650]/">
+							<div className="relative overflow-hidden rounded-lg">
 								<Image
 									alt="Transformation results"
 									className="h-auto w-full object-cover"
@@ -99,7 +99,7 @@ export function Transformation() {
 
 					{/* Right Side: Image (Hidden on Mobile) */}
 					<div className="relative mx-auto hidden w-full max-w-lg lg:block lg:max-w-2xl">
-						<div className="relative overflow-hidden rounded-2xl shadow-2xl shadow-[#ffc650]/">
+						<div className="relative overflow-hidden rounded-lg">
 							<Image
 								alt="Transformation results"
 								className="h-auto w-full object-cover"

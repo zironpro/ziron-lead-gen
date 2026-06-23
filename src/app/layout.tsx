@@ -33,7 +33,7 @@ export default function RootLayout({
 					mono.variable
 				)}
 			>
-				<ToastProvider>
+				<ToastProvider position="top-center">
 					<Navbar />
 					<main className="relative flex w-full flex-1 flex-col overflow-x-hidden">
 						{children}
