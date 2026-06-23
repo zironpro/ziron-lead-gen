@@ -180,7 +180,7 @@ export function Package() {
 				{/* Pricing Carousel / Grid */}
 				<Carousel
 					className="w-full max-w-full"
-					opts={{ align: "center", loop: false, startIndex: 1 }}
+					opts={{ align: "center", loop: false, startIndex: 0 }}
 				>
 					<CarouselContent className="-ml-4 items-stretch pt-6 pb-6 md:-ml-8">
 						{packages.map((pkg, index) => {
