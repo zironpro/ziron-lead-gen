@@ -117,7 +117,7 @@ export function Hero() {
 						<div className="relative flex w-full animate-hero-fade-in items-center justify-center pt-2 lg:pt-0">
 							<video
 								autoPlay
-								className="h-auto w-full max-w-[600px] object-contain transition-transform duration-500 hover:scale-105"
+								className="h-auto w-full max-w-[600px] object-contain"
 								loop
 								muted
 								playsInline

@@ -51,7 +51,7 @@ export function WeAchieved() {
 					{/* Left Column: Info & CTA */}
 					<div className="relative w-full overflow-hidden rounded-lg border border-slate-200 bg-white p-8 shadow-slate-200/50 shadow-xl md:p-10 lg:sticky lg:top-24 lg:w-5/12">
 						{/* Background decoration */}
-						<div className="absolute top-0 right-0 z-0 -mt-16 -mr-16 h-48 w-48 rounded-full bg-[#ffc650]/10 blur-3xl" />
+
 
 						<div className="relative z-10">
 							<Badge className="mb-6 rounded-lg border-none bg-slate-900 px-4 py-1.5 font-semibold text-white text-xs tracking-wider hover:bg-slate-800">

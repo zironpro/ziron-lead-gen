@@ -10,8 +10,7 @@ import { Badge } from "@/components/ui/badge";
 export function MetaAds() {
 	return (
 		<section className="relative overflow-hidden bg-white py-20 md:py-32">
-			{/* Background decoration */}
-			<div className="pointer-events-none absolute top-0 left-0 -mt-20 -ml-20 h-72 w-72 rounded-full bg-blue-500/5 blur-3xl" />
+
 
 			<div className="container relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 				<div className="grid grid-cols-1 items-stretch gap-12 lg:grid-cols-2 lg:gap-20">

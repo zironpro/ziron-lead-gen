@@ -105,7 +105,7 @@ export function Transformation() {
 								className="h-auto w-full object-cover"
 								height={1200}
 								quality={100}
-								src="/digital-marketing/image/socialmedia.jpeg"
+								src="/digital-marketing/image/socialmedia.webp"
 								unoptimized={true}
 								width={1200}
 							/>
